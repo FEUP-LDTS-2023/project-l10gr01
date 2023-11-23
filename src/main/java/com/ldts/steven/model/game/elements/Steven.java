@@ -1,9 +1,9 @@
 package com.ldts.steven.model.game.elements;
 
-public class Hero extends Element{
+public class Steven extends Element{
     private int lifes;
 
-    public Hero(int x, int y) {
+    public Steven(int x, int y) {
         super(x, y);
         this.lifes= 3;
     }

@@ -1,4 +1,5 @@
 package com.ldts.steven.gui;
+import com.googlecode.lanterna.graphics.TextImage;
 import com.ldts.steven.model.Position;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -28,9 +29,10 @@ public class LanternaGUI implements GUI {
         AWTTerminalFontConfiguration fontConfig = loadSquareFont();
         Terminal terminal = createTerminal(width, height, fontConfig);
         this.screen = createScreen(terminal);
+
     }
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        URL resource = getClass().getClassLoader().getResource("fonts/PixelCode.otf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -57,7 +59,18 @@ public class LanternaGUI implements GUI {
         screen.setCursorPosition(null);
         screen.startScreen();
         screen.doResizeIfNecessary();
+        screen.refresh();
+
         return screen;
+    }
+
+    public void setBackgroundColor(TextColor backgroundColor) {
+        TextGraphics tg = screen.newTextGraphics();
+        tg.setBackgroundColor(backgroundColor);
+
+
+        // Fill the entire screen with the background color
+        tg.fill(' ');
     }
     @Override
     public void drawHero(Position position) {

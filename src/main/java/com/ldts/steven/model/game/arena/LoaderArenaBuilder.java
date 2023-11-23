@@ -1,6 +1,6 @@
 package com.ldts.steven.model.game.arena;
 
-import com.ldts.steven.model.game.elements.Hero;
+import com.ldts.steven.model.game.elements.Steven;
 import com.ldts.steven.model.game.elements.Monster;
 import com.ldts.steven.model.game.elements.Wall;
 
@@ -71,11 +71,11 @@ public class LoaderArenaBuilder extends ArenaBuilder {
     }
 
     @Override
-    protected Hero createHero() {
+    protected Steven createSteven() {
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
             for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'H') return new Hero(x, y);
+                if (line.charAt(x) == 'H') return new Steven(x, y);
         }
         return null;
     }

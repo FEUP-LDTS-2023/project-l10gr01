@@ -1,6 +1,6 @@
 package com.ldts.steven.model.game.arena;
 
-import com.ldts.steven.model.game.elements.Hero;
+import com.ldts.steven.model.game.elements.Steven;
 import com.ldts.steven.model.game.elements.Monster;
 import com.ldts.steven.model.game.elements.Wall;
 
@@ -10,7 +10,7 @@ public abstract class ArenaBuilder {
     public Arena createArena() {
         Arena arena = new Arena(getWidth(), getHeight());
 
-        arena.setHero(createHero());
+        arena.setSteven(createSteven());
         arena.setMonsters(createMonsters());
         arena.setWalls(createWalls());
 
@@ -25,5 +25,5 @@ public abstract class ArenaBuilder {
 
     protected abstract List<Monster> createMonsters();
 
-    protected abstract Hero createHero();
+    protected abstract Steven createSteven();
 }

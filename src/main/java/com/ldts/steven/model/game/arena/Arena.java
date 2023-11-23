@@ -1,5 +1,5 @@
 package com.ldts.steven.model.game.arena;
-import com.ldts.steven.model.game.elements.Hero;
+import com.ldts.steven.model.game.elements.Steven;
 import com.ldts.steven.model.game.elements.Monster;
 import com.ldts.steven.model.game.elements.Wall;
 
@@ -9,7 +9,7 @@ public class Arena {
     private int width;
     private int height;
 
-    private Hero hero;
+    private Steven steven;
     private List<Monster> monsters;
     private List<Wall> walls;
 
@@ -31,12 +31,12 @@ public class Arena {
         return height;
     }
 
-    public Hero getHero() {
-        return hero;
+    public Steven getSteven() {
+        return steven;
     }
 
-    public void setHero(Hero hero) {
-        this.hero = hero;
+    public void setSteven(Steven steven) {
+        this.steven = steven;
     }
 
     public List<Monster> getMonsters() {
