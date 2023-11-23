@@ -1,4 +1,6 @@
 package com.ldts.steven.gui;
+import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import com.ldts.steven.model.Position;
 import java.io.IOException;
 public interface GUI {
@@ -13,4 +15,8 @@ public interface GUI {
     void refresh() throws IOException;
 
     void close() throws IOException;
+
+    void drawText(Position position, String text, String color);
+
+
 }

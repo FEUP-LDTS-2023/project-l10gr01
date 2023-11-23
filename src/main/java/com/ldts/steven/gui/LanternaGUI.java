@@ -70,6 +70,14 @@ public class LanternaGUI implements GUI {
             drawCharacter(position.getX(), position.getY(), '#', "#0000FF");
         }
     }
+
+    public void drawText(Position position, String text, String color) {
+        TextGraphics tg = screen.newTextGraphics();
+        tg.setForegroundColor(TextColor.Factory.fromString(color));
+        tg.putString(position.getX(), position.getY(), text);
+    }
+
+
     @Override
     public void drawMonster(Position position) {
         drawCharacter(position.getX(), position.getY(), 'M', "#00FF00");
