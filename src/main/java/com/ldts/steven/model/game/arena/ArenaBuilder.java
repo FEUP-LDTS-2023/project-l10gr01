@@ -14,6 +14,7 @@ public abstract class ArenaBuilder {
         arena.setSteven(createSteven());
         arena.setMonsters(createMonsters());
         arena.setWalls(createWalls());
+        arena.setBreakableWalls(createBreakableWalls());
 
         return arena;
     }

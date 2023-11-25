@@ -1,24 +1,20 @@
 package com.ldts.steven.gui;
-import com.googlecode.lanterna.graphics.TextImage;
 import com.ldts.steven.model.Position;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.awt.image.BufferedImage;
+
 public class LanternaGUI implements GUI {
     private Screen screen;
     public LanternaGUI(Screen screen) {
@@ -83,6 +79,13 @@ public class LanternaGUI implements GUI {
             drawCharacter(position.getX(), position.getY(), '#', "#F474BF");
         }
     }
+    @Override
+    public void drawBreakableWall(Position position) {
+        {
+            drawCharacter(position.getX(), position.getY(), '#', "#6F2DA8");
+        }
+    }
+
 
     public void drawText(Position position, String text, String color) {
         TextGraphics tg = screen.newTextGraphics();

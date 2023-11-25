@@ -16,6 +16,8 @@ public interface GUI {
 
     void close() throws IOException;
 
+    void drawBreakableWall(Position position);
+
     void drawText(Position position, String text, String color);
 
 
