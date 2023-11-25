@@ -62,9 +62,9 @@ The **State Pattern** allows an object to alter its behavior. In our code, the S
 
 The following diagram illustrates how the pattern was implemented.
 
-The classes can be found at [States](https://github.com/FEUP-LDTS-2023/project-l10gr01/tree/main/src/main/java/com/ldts/steven/states)
+The classes can be found at [States](src/main/java/com/ldts/steven/states)
 
-[Diagram](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/State.drawio.png)
+[Diagram](Docs/State.drawio.png)
 
 **Consequences**
 
