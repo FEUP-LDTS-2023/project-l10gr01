@@ -56,6 +56,7 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 **Consequences**
 
 -> Transitions between states happen at run-time, and they can be explicitly found in code.
+
 -> Ensures the **Single Responsibility Principle**
 
 
