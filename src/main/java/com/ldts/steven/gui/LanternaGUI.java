@@ -74,13 +74,13 @@ public class LanternaGUI implements GUI {
     }
     @Override
     public void drawHero(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'S', "#FFD700");
+        drawCharacter(position.getX(), position.getY(), 'S', "#FFEB48");
     }
 
     @Override
     public void drawWall(Position position) {
         {
-            drawCharacter(position.getX(), position.getY(), '#', "#0000FF");
+            drawCharacter(position.getX(), position.getY(), '#', "#F474BF");
         }
     }
 
@@ -93,7 +93,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawMonster(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'M', "#00FF00");
+        drawCharacter(position.getX(), position.getY(), 'M', "#90FF5D");
     }
 
     private void drawCharacter(int x, int y, char c, String color) {
