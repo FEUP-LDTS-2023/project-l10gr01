@@ -1,4 +1,5 @@
 package com.ldts.steven.model.game.arena;
+import com.ldts.steven.model.game.elements.BreakableWall;
 import com.ldts.steven.model.game.elements.Steven;
 import com.ldts.steven.model.game.elements.Monster;
 import com.ldts.steven.model.game.elements.Wall;
@@ -12,6 +13,7 @@ public class Arena {
     private Steven steven;
     private List<Monster> monsters;
     private List<Wall> walls;
+    private List<BreakableWall> breakableWalls;
 
     public Arena(int width, int height) {
         this.height = height;
@@ -59,4 +61,11 @@ public class Arena {
         this.height = height;
     }
 
+    public List<BreakableWall> getBreakableWalls() {
+        return breakableWalls;
+    }
+
+    public void setBreakableWalls(List<BreakableWall> breakableWalls) {
+        this.breakableWalls = breakableWalls;
+    }
 }

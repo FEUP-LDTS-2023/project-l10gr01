@@ -1,5 +1,6 @@
 package com.ldts.steven.model.game.arena;
 
+import com.ldts.steven.model.game.elements.BreakableWall;
 import com.ldts.steven.model.game.elements.Steven;
 import com.ldts.steven.model.game.elements.Monster;
 import com.ldts.steven.model.game.elements.Wall;
@@ -55,6 +56,18 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         }
 
         return walls;
+    }
+    @Override
+    protected List<BreakableWall> createBreakableWalls() {
+        List<BreakableWall> breakablewalls = new ArrayList<>();
+
+        for (int y = 0; y < lines.size(); y++) {
+            String line = lines.get(y);
+            for (int x = 0; x < line.length(); x++)
+                if (line.charAt(x) == '%') breakablewalls.add(new BreakableWall(x, y));
+        }
+
+        return breakablewalls;
     }
 
     @Override

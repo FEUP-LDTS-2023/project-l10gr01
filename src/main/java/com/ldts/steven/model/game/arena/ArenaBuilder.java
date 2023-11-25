@@ -1,5 +1,6 @@
 package com.ldts.steven.model.game.arena;
 
+import com.ldts.steven.model.game.elements.BreakableWall;
 import com.ldts.steven.model.game.elements.Steven;
 import com.ldts.steven.model.game.elements.Monster;
 import com.ldts.steven.model.game.elements.Wall;
@@ -26,4 +27,5 @@ public abstract class ArenaBuilder {
     protected abstract List<Monster> createMonsters();
 
     protected abstract Steven createSteven();
+    protected abstract List<BreakableWall> createBreakableWalls();
 }
