@@ -48,6 +48,8 @@ The **Factory Method Pattern** allows an abstract class to create an object, but
 
 **Implementation**
 
+
+
 #### The Screen State ####
 
 In our game, Lanterna will be responsible to print different screens depending on the user's input. For example, once the game starts the Menu screen will appear, after he press start the Game screen will appear. Looking at this, it's very clear that a **State Pattern** would be necessary, defining in which state the game is running, and each state is responsible for creating its viewer.
@@ -57,6 +59,20 @@ In our game, Lanterna will be responsible to print different screens depending o
 The **State Pattern** allows an object to alter its behavior. In our code, the State class is an interface that will be implement by each Concrete State. In our main class, only the object of State class will be instaciated, because the states will differ at run-time.
 
 **Implementation**
+
+The following diagram illustrates how the pattern was implemented.
+
+The classes can be found at [States](https://github.com/FEUP-LDTS-2023/project-l10gr01/tree/main/src/main/java/com/ldts/steven/states)
+
+[Diagram](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/State.drawio.png)
+
+**Consequences**
+
+-> Transitions between states happen at run-time, and they can be explicitly found in code.
+-> Ensures the **Single Responsibility Principle**
+
+
+
 
 
 
