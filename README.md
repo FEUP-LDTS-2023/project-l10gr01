@@ -25,29 +25,6 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 
 ### DESIGN
 
-#### THE ARENA BUILDER FACTORY METHOD ####
-
-**Problem in Context**
-
-The building of an arena would take different implementations, this is because at each different level a different arena would be created. A possible implementation would be to create the default arena (level 1) and add to the constructor the level required, checking with conditionals and calling a different class method to construct each level. However, this implementation would violate the **Open-Closed Principle**.  We decided that would be best to use a **Factory Method Pattern** so that an abstract class called ArenaBuilder would be extended as the levels were created.
-
-
-**The Pattern**
-
-The **Factory Method Pattern** allows an abstract class to create an object, but let the subclasses decide which class to instantiate. In our code, the abstract class would be the ArenaBuilder and the subclass the LoaderArenaBuilder, each subclass will represent a different level and each one will act as a factory for creating elements. 
-
-**Implementation**
-
-The pattern becomes explicit once we view the [model of the arena](src/main/java/com/ldts/steven/model/game/arena).
-
-The UML [Diagram](Docs/Arena.png) shows how the classes interact with each other.
-
-**Consequences**
-
--> The responsibility of creating different variations of elements will be given to the subclasses of ArenaBuilder.
-
-->
-
 #### THE SCREEN STATE ####
 
 In our game, Lanterna will be responsible to print different screens depending on the user's input. For example, once the game starts, the Menu screen will appear, after they press start the Game screen will appear. Looking at this, it's very clear that a **State Pattern** would be necessary, defining in which state the game is running, and each state is responsible for creating its viewer.
