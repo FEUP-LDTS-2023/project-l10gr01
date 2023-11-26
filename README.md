@@ -21,7 +21,7 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 -> **10X Bomb Upgrade** : by finding this bomb upgrade Steven will be able to temporarily enlarge the radius of bomb damage by 10x. 
 
 -> **Unlimited Bombs Upgrade** : by finding this bomb upgrade, Steven will be able to temporarily deploy an unlimited amount of bombs, without waiting his power to recharge.
-
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/1%20(1).png)
 
 ### DESIGN
 
