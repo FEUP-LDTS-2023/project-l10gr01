@@ -50,11 +50,11 @@ The UML [Diagram](Docs/Arena.png) shows how the classes interact with each other
 
 #### THE SCREEN STATE ####
 
-In our game, Lanterna will be responsible to print different screens depending on the user's input. For example, once the game starts the Menu screen will appear, after he press start the Game screen will appear. Looking at this, it's very clear that a **State Pattern** would be necessary, defining in which state the game is running, and each state is responsible for creating its viewer.
+In our game, Lanterna will be responsible to print different screens depending on the user's input. For example, once the game starts, the Menu screen will appear, after they press start the Game screen will appear. Looking at this, it's very clear that a **State Pattern** would be necessary, defining in which state the game is running, and each state is responsible for creating its viewer.
 
 **The Pattern**
 
-The **State Pattern** allows an object to alter its behavior. In our code, the State class is an interface that will be implement by each Concrete State. In our main class, only the object of State class will be instaciated, because the states will differ at run-time.
+The **State Pattern** allows an object to alter its behavior. In our code, the State class is an interface that will be implemented by each Concrete State. In our main class, only the object of State class will be instaciated, because the states will differ at run-time.
 
 **Implementation**
 
