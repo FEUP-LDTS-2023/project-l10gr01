@@ -21,7 +21,30 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 -> **10X Bomb Upgrade** : by finding this bomb upgrade Steven will be able to temporarily enlarge the radius of bomb damage by 10x. 
 
 -> **Unlimited Bombs Upgrade** : by finding this bomb upgrade, Steven will be able to temporarily deploy an unlimited amount of bombs, without waiting his power to recharge.
+
+**MENU**
 ![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/1%20(1).png)
+
+**LEVEL 1**
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/2%20(1).png)
+
+**LEVEL 1 (BOMB EXPLOSION)**
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/3%20(1).png)
+
+**LEVEL 1 (ALL UPGRADES)**
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/4%20(1).png)
+
+**LEVEL 2**
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/5%20(1).png)
+
+**LEVEL 2 (UNLIMITED BOMBS UPGRADE)**
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/1%20(1).png)
+
+**LEVEL 3**
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/7%20(1).png)
+
+**LEVEL 3 (10X BOMB UPGRADE)
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/8%20(1).png)
 
 ### DESIGN
 
