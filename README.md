@@ -69,6 +69,12 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 
 -> Ensures the **Single Responsibility Principle**
 
+### UML DIAGRAM
+
+> A UML [diagram](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/diagram.png) expliciting the implementation of the classes:
+
+ ![img](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/diagram.png)
+
 ### SELF-EVALUATION
 
 > The tasks of this delivery were evenly distribuited between all members. We had daily discussions about the implementation and design of our project, regarding everyone's input.
