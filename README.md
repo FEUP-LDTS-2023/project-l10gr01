@@ -23,6 +23,8 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 -> **Unlimited Bombs Upgrade** : by finding this bomb upgrade, Steven will be able to temporarily deploy an unlimited amount of bombs, without waiting his power to recharge.
 
 
+### DESIGN
+
 #### THE ARENA BUILDER FACTORY METHOD ####
 
 **Problem in Context**
@@ -36,9 +38,17 @@ The **Factory Method Pattern** allows an abstract class to create an object, but
 
 **Implementation**
 
+The pattern becomes explicit once we view the [model of the arena](src/main/java/com/ldts/steven/model/game/arena).
 
+The UML [Diagram](Docs/Arena.png) shows how the classes interact with each other.
 
-#### The Screen State ####
+**Consequences**
+
+-> The responsibility of creating different variations of elements will be given to the subclasses of ArenaBuilder.
+
+->
+
+#### THE SCREEN STATE ####
 
 In our game, Lanterna will be responsible to print different screens depending on the user's input. For example, once the game starts the Menu screen will appear, after he press start the Game screen will appear. Looking at this, it's very clear that a **State Pattern** would be necessary, defining in which state the game is running, and each state is responsible for creating its viewer.
 
