@@ -38,7 +38,7 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 ![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/5%20(1).png)
 
 **LEVEL 2 (UNLIMITED BOMBS UPGRADE)**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/1%20(1).png)
+![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/6%20(2).png)
 
 **LEVEL 3**
 ![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/7%20(1).png)
