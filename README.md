@@ -43,7 +43,7 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 **LEVEL 3**
 ![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/7%20(1).png)
 
-**LEVEL 3 (10X BOMB UPGRADE)
+**LEVEL 3 (10X BOMB UPGRADE)**
 ![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/Documentation/Docs/8%20(1).png)
 
 ### DESIGN
