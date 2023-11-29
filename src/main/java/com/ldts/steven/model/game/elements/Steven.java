@@ -16,4 +16,7 @@ public class Steven extends Element{
         return lifes;
     }
 
+    public void increaseLifes() {
+        if(lifes < 3) this.lifes++;
+    }
 }

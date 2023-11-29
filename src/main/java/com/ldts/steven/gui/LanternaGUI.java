@@ -80,6 +80,12 @@ public class LanternaGUI implements GUI {
         }
     }
 
+    @Override
+    public void drawLife(Position position){
+        {
+            drawCharacter(position.getX(), position.getY(), '@',"#E6D4A2");
+        }
+    }
 
     public void drawText(Position position, String text, String color) {
         TextGraphics tg = screen.newTextGraphics();

@@ -20,6 +20,7 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getMonsters(), new MonsterViewer());
         drawElement(gui, getModel().getSteven(), new StevenViewer());
         drawElements(gui, getModel().getBreakableWalls(), new BreakableWallViewer());
+        drawElements(gui,getModel().getLifes(), new LifeViewer());
 
 
         gui.drawText(new Position(0, 0), "LIFES: " + getModel().getSteven().getLifes(), "#FFD700");

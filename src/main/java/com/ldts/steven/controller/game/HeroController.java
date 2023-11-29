@@ -30,6 +30,10 @@ public class HeroController extends GameController {
         if (getModel().isEmpty(position)) {
             getModel().getSteven().setPosition(position);
             if (getModel().isMonster(position)) getModel().getSteven().decreaseLifes();
+            if (getModel().isLife(position)) {
+                getModel().eraseLife(position);
+                getModel().getSteven().increaseLifes();
+            }
         }
     }
 

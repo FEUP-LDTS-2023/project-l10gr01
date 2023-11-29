@@ -1,9 +1,6 @@
 package com.ldts.steven.model.game.arena;
 import com.ldts.steven.model.Position;
-import com.ldts.steven.model.game.elements.BreakableWall;
-import com.ldts.steven.model.game.elements.Steven;
-import com.ldts.steven.model.game.elements.Monster;
-import com.ldts.steven.model.game.elements.Wall;
+import com.ldts.steven.model.game.elements.*;
 
 import java.util.List;
 
@@ -15,6 +12,8 @@ public class Arena {
     private List<Monster> monsters;
     private List<Wall> walls;
     private List<BreakableWall> breakableWalls;
+
+    private List<Life> lifes;
 
     public Arena(int width, int height) {
         this.height = height;
@@ -62,6 +61,24 @@ public class Arena {
         this.height = height;
     }
 
+    public List<Life> getLifes() {
+        return lifes;
+    }
+
+    public void eraseLife(Position position){
+        for(int i =0; i < lifes.size();i++){
+            if(lifes.get(i).getPosition().equals(position) && steven.getLifes()<3) {
+                lifes.remove(i);
+            }
+
+        }
+
+    }
+
+    public void setLifes(List<Life> lifes) {
+        this.lifes = lifes;
+    }
+
     public List<BreakableWall> getBreakableWalls() {
         return breakableWalls;
     }
@@ -74,6 +91,9 @@ public class Arena {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
                 return false;
+        for (BreakableWall wall : breakableWalls)
+            if (wall.getPosition().equals(position))
+                return false;
         return true;
     }
 
@@ -81,6 +101,14 @@ public class Arena {
         for (Monster monster : monsters)
             if (monster.getPosition().equals(position))
                 return true;
+        return false;
+    }
+
+    public boolean isLife(Position position){
+        for(Life life : lifes){
+            if(life.getPosition().equals(position))
+                return true;
+        }
         return false;
     }
 

@@ -1,9 +1,7 @@
 package com.ldts.steven.model.game.arena;
 
-import com.ldts.steven.model.game.elements.BreakableWall;
-import com.ldts.steven.model.game.elements.Steven;
-import com.ldts.steven.model.game.elements.Monster;
-import com.ldts.steven.model.game.elements.Wall;
+import com.ldts.steven.model.Position;
+import com.ldts.steven.model.game.elements.*;
 
 import java.util.List;
 
@@ -15,6 +13,7 @@ public abstract class ArenaBuilder {
         arena.setMonsters(createMonsters());
         arena.setWalls(createWalls());
         arena.setBreakableWalls(createBreakableWalls());
+        arena.setLifes(createLifes());
 
         return arena;
     }
@@ -29,4 +28,6 @@ public abstract class ArenaBuilder {
 
     protected abstract Steven createSteven();
     protected abstract List<BreakableWall> createBreakableWalls();
+    protected abstract List<Life> createLifes();
+
 }

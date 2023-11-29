@@ -1,9 +1,7 @@
 package com.ldts.steven.model.game.arena;
 
-import com.ldts.steven.model.game.elements.BreakableWall;
-import com.ldts.steven.model.game.elements.Steven;
-import com.ldts.steven.model.game.elements.Monster;
-import com.ldts.steven.model.game.elements.Wall;
+import com.ldts.steven.model.Position;
+import com.ldts.steven.model.game.elements.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -71,6 +69,20 @@ public class LoaderArenaBuilder extends ArenaBuilder {
     }
 
     @Override
+    protected List<Life> createLifes() {
+        List<Life> lifes = new ArrayList<>();
+
+        for (int y = 0; y < lines.size(); y++) {
+            String line = lines.get(y);
+            for (int x = 0; x < line.length(); x++)
+                if (line.charAt(x) == 'L') lifes.add(new Life(x, y));
+        }
+
+        return lifes;
+    }
+
+
+    @Override
     protected List<Monster> createMonsters() {
         List<Monster> monsters = new ArrayList<>();
 
@@ -92,4 +104,6 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         }
         return null;
     }
+
+
 }
