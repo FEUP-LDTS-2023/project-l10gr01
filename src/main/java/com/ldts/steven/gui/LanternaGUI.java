@@ -86,7 +86,29 @@ public class LanternaGUI implements GUI {
             drawCharacter(position.getX(), position.getY(), '@',"#E6D4A2");
         }
     }
+    public void drawBomb(Position position){
+        drawCharacter(position.getX(), position.getY(), 'B',"#F89820");
+    }
+    public void drawBombExploded(Position position){
+        int x = position.getX();
+        int y = position.getY();
 
+        // Desenhe a explosão ao redor da posição da bomba explodida
+        drawCharacter(x, y, '*', "#FF0000"); // Ponto central da explosão
+
+        // Desenhe a explosão na horizontal (esquerda e direita)
+        for (int i = 1; i <= 3; i++) {
+
+            drawCharacter(x - i, y, '*', "#FF0000"); // Esquerda
+            drawCharacter(x + i, y, '*', "#FF0000"); // Direita
+        }
+
+        // Desenhe a explosão na vertical (cima e baixo)
+        for (int i = 1; i <= 3; i++) {
+            drawCharacter(x, y - i, '*', "#FF0000"); // Cima
+            drawCharacter(x, y + i, '*', "#FF0000"); // Baixo
+        }
+    }
     public void drawText(Position position, String text, String color) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
@@ -110,7 +132,7 @@ public class LanternaGUI implements GUI {
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
         if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
-        if(keyStroke.getKeyType() == KeyType.Character) return ACTION.SPACE;
+        if(keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == ' ') return ACTION.SPACE;
 
         if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
 

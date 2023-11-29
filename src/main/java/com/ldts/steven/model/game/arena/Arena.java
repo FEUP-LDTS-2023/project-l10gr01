@@ -68,9 +68,9 @@ public class Arena {
         return lifes;
     }
 
-    public void eraseLife(Position position){
-        for(int i =0; i < lifes.size();i++){
-            if(lifes.get(i).getPosition().equals(position) && steven.getLifes()<3) {
+    public void eraseLife(Position position) {
+        for (int i = 0; i < lifes.size(); i++) {
+            if (lifes.get(i).getPosition().equals(position) && steven.getLifes() < 3) {
                 lifes.remove(i);
             }
 
@@ -106,21 +106,32 @@ public class Arena {
                 return true;
         return false;
     }
-    public boolean isLife(Position position){
-        for(Life life : lifes){
-            if(life.getPosition().equals(position))
+
+    public boolean isLife(Position position) {
+        for (Life life : lifes) {
+            if (life.getPosition().equals(position))
                 return true;
         }
         return false;
     }
+
     public boolean isBomb(Position position) {
-        for(Bomb bomb : bombs){
-            if(bomb.getPosition().equals(position))
+        for (Bomb bomb : bombs) {
+            if (bomb.getPosition().equals(position))
                 return true;
         }
         return false;
     }
+
     public void addBomb(Bomb bomb) {
         bombs.add(bomb);
+    }
+
+    public List<Bomb> getBombs() {
+        return bombs;
+    }
+
+    public void updateBombs() {
+        bombs.removeIf(Bomb::hasExploded);
     }
 }

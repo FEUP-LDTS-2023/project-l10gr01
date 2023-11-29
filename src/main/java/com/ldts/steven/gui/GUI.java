@@ -19,7 +19,8 @@ public interface GUI {
     void drawBreakableWall(Position position);
 
     void drawLife(Position position);
-
+    void drawBomb(Position position);
+    void drawBombExploded(Position position);
     void drawText(Position position, String text, String color);
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, SPACE}

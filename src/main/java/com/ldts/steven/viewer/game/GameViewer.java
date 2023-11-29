@@ -4,6 +4,7 @@ package com.ldts.steven.viewer.game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
+import com.ldts.steven.model.game.elements.Bomb;
 import com.ldts.steven.model.game.elements.Element;
 import com.ldts.steven.viewer.Viewer;
 
@@ -21,6 +22,7 @@ public class GameViewer extends Viewer<Arena> {
         drawElement(gui, getModel().getSteven(), new StevenViewer());
         drawElements(gui, getModel().getBreakableWalls(), new BreakableWallViewer());
         drawElements(gui,getModel().getLifes(), new LifeViewer());
+        drawElements(gui, getModel().getBombs(), new BombViewer());
 
 
         gui.drawText(new Position(0, 0), "LIFES: " + getModel().getSteven().getLifes(), "#FFD700");

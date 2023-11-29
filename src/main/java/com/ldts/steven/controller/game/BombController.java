@@ -16,5 +16,7 @@ public class BombController extends GameController{
     }
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
+        for (Bomb bomb : getModel().getBombs()) {
+            bomb.update();}
     }
 }
