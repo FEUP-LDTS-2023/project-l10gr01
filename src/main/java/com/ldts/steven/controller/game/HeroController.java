@@ -4,10 +4,14 @@ import com.ldts.steven.Game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
+import com.ldts.steven.model.game.elements.Bomb;
 
 public class HeroController extends GameController {
-    public HeroController(Arena arena) {
+
+    private BombController bombController;
+    public HeroController(Arena arena, BombController bombController) {
         super(arena);
+        this.bombController=bombController;
     }
 
     public void moveHeroLeft() {
@@ -29,7 +33,7 @@ public class HeroController extends GameController {
     private void moveHero(Position position) {
         if (getModel().isEmpty(position)) {
             getModel().getSteven().setPosition(position);
-            if (getModel().isMonster(position)) getModel().getSteven().decreaseLifes();
+            if (getModel().isMonster(position) || getModel().isBomb(position)) getModel().getSteven().decreaseLifes();
             if (getModel().isLife(position)) {
                 getModel().eraseLife(position);
                 getModel().getSteven().increaseLifes();
@@ -43,5 +47,9 @@ public class HeroController extends GameController {
         if (action == GUI.ACTION.RIGHT) moveHeroRight();
         if (action == GUI.ACTION.DOWN) moveHeroDown();
         if (action == GUI.ACTION.LEFT) moveHeroLeft();
+        if (action == GUI.ACTION.SPACE) {
+            Position heroPosition = getModel().getSteven().getPosition();
+            bombController.plantBomb(heroPosition);
+        }
     }
 }

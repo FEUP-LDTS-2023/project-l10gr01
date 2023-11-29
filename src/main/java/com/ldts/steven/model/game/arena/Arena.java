@@ -2,6 +2,7 @@ package com.ldts.steven.model.game.arena;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.elements.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Arena {
@@ -14,10 +15,12 @@ public class Arena {
     private List<BreakableWall> breakableWalls;
 
     private List<Life> lifes;
+    private List<Bomb> bombs;
 
     public Arena(int width, int height) {
         this.height = height;
         this.width = width;
+        this.bombs = new ArrayList<>();
     }
 
 
@@ -103,7 +106,6 @@ public class Arena {
                 return true;
         return false;
     }
-
     public boolean isLife(Position position){
         for(Life life : lifes){
             if(life.getPosition().equals(position))
@@ -111,5 +113,14 @@ public class Arena {
         }
         return false;
     }
-
+    public boolean isBomb(Position position) {
+        for(Bomb bomb : bombs){
+            if(bomb.getPosition().equals(position))
+                return true;
+        }
+        return false;
+    }
+    public void addBomb(Bomb bomb) {
+        bombs.add(bomb);
+    }
 }
