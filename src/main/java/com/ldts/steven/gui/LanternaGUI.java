@@ -1,4 +1,6 @@
 package com.ldts.steven.gui;
+import com.googlecode.lanterna.input.KeyStroke;
+import com.googlecode.lanterna.input.KeyType;
 import com.ldts.steven.model.Position;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -60,14 +62,6 @@ public class LanternaGUI implements GUI {
         return screen;
     }
 
-    public void setBackgroundColor(TextColor backgroundColor) {
-        TextGraphics tg = screen.newTextGraphics();
-        tg.setBackgroundColor(backgroundColor);
-
-
-        // Fill the entire screen with the background color
-        tg.fill(' ');
-    }
     @Override
     public void drawHero(Position position) {
         drawCharacter(position.getX(), position.getY(), 'S', "#FFEB48");
@@ -98,6 +92,24 @@ public class LanternaGUI implements GUI {
     public void drawMonster(Position position) {
         drawCharacter(position.getX(), position.getY(), 'M', "#90FF5D");
     }
+
+    public ACTION getNextAction() throws IOException {
+        KeyStroke keyStroke = screen.pollInput();
+        if (keyStroke == null) return ACTION.NONE;
+
+        if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
+        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
+
+        if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
+        if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
+        if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
+        if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
+
+        if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
+
+        return ACTION.NONE;
+    }
+
 
     private void drawCharacter(int x, int y, char c, String color) {
         TextGraphics tg = screen.newTextGraphics();

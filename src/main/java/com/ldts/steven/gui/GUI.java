@@ -20,5 +20,8 @@ public interface GUI {
 
     void drawText(Position position, String text, String color);
 
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT}
+
+    ACTION getNextAction() throws IOException;
 
 }

@@ -22,7 +22,7 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getBreakableWalls(), new BreakableWallViewer());
 
 
-        gui.drawText(new Position(0, 0), "LIFES: " + getModel().getSteven().getEnergy(), "#FFD700");
+        gui.drawText(new Position(0, 0), "LIFES: " + getModel().getSteven().getLifes(), "#FFD700");
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {

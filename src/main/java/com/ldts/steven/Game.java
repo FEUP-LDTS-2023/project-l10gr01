@@ -24,9 +24,7 @@ public class Game {
 
         public static void main(String[] args) throws IOException, FontFormatException, URISyntaxException {
             new Game().start();
-            Game game = new Game();
-            game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
-            game.start();
+
         }
 
         public void setState(State state) {
@@ -45,11 +43,6 @@ public class Game {
                 long elapsedTime = System.currentTimeMillis() - startTime;
                 long sleepTime = frameTime - elapsedTime;
 
-                Scanner s = new Scanner(System.in);
-                System.out.println("To exit press q: ");
-                String read = s.nextLine();
-
-                if(read.equals("q")) break;
                 try {
                     if (sleepTime > 0) Thread.sleep(sleepTime);
                 } catch (InterruptedException e) {

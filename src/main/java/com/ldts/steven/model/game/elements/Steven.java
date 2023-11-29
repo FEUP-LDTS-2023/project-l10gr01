@@ -8,11 +8,11 @@ public class Steven extends Element{
         this.lifes= 3;
     }
 
-    public void decreaseEnergy() {
+    public void decreaseLifes() {
         this.lifes--;
     }
 
-    public int getEnergy() {
+    public int getLifes() {
         return lifes;
     }
 

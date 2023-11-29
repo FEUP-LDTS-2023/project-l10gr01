@@ -1,4 +1,5 @@
 package com.ldts.steven.model.game.arena;
+import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.elements.BreakableWall;
 import com.ldts.steven.model.game.elements.Steven;
 import com.ldts.steven.model.game.elements.Monster;
@@ -68,4 +69,19 @@ public class Arena {
     public void setBreakableWalls(List<BreakableWall> breakableWalls) {
         this.breakableWalls = breakableWalls;
     }
+
+    public boolean isEmpty(Position position) {
+        for (Wall wall : walls)
+            if (wall.getPosition().equals(position))
+                return false;
+        return true;
+    }
+
+    public boolean isMonster(Position position) {
+        for (Monster monster : monsters)
+            if (monster.getPosition().equals(position))
+                return true;
+        return false;
+    }
+
 }
