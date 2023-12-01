@@ -3,6 +3,7 @@ import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.elements.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Arena {
@@ -114,11 +115,32 @@ public class Arena {
         }
         return false;
     }
+    public void killMonster(Monster monster){
+        List<Monster> updatedMonsters = new ArrayList<>();
+
+        for (Monster currentMonster : monsters) {
+            if (!currentMonster.equals(monster)) {
+                updatedMonsters.add(currentMonster);
+                // Adicione aqui qualquer outra lógica relacionada à eliminação do monstro
+            }
+        }
+        // Atualize a lista original com a nova lista de monstros
+        monsters = updatedMonsters;
+    }
+    public void breakWall(BreakableWall wall){;}
 
     public boolean isBomb(Position position) {
         for (Bomb bomb : bombs) {
-            if (bomb.getPosition().equals(position))
+            if(!bomb.hasExploded()) return false;
+            int bombX = bomb.getPosition().getX();
+            int bombY = bomb.getPosition().getY();
+            int positionX = position.getX();
+            int positionY = position.getY();
+
+            // Verifique se a posição está dentro do raio de explosão (considerando um raio de 3)
+            if (Math.abs(bombX - positionX) <= 3 && Math.abs(bombY - positionY) <= 3) {
                 return true;
+            }
         }
         return false;
     }
