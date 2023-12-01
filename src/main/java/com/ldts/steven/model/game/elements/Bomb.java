@@ -16,6 +16,7 @@ public class Bomb extends Element{
         this.exploded = false;
         this.explosionRadius = 3; // Pode mudar se tiver com poderes, etc.
         this.plantTime = System.currentTimeMillis();
+        this.canBombExplode = new Vector<>();
     };
 
     private void explode() {
@@ -35,6 +36,7 @@ public class Bomb extends Element{
     public int getExplosionRadius() {
         return explosionRadius;
     }
+
 
     public void setExplosionRadius(int explosionRadius) {
         this.explosionRadius = explosionRadius;

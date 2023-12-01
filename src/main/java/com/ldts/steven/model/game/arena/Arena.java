@@ -111,6 +111,12 @@ public class Arena {
                 return true;
         return false;
     }
+    public boolean isWall(Position position) {
+        for (Wall wall : walls)
+            if (wall.getPosition().equals(position))
+                return true;
+        return false;
+    }
 
     public boolean isLife(Position position) {
         for (Life life : lifes) {
@@ -131,24 +137,18 @@ public class Arena {
         // Atualize a lista original com a nova lista de monstros
         monsters = updatedMonsters;
     }
-    public void breakWall(BreakableWall wall){;}
 
     public boolean isBomb(Position position) {
         for (Bomb bomb : bombs) {
-            if (bomb.hasExploded()) {
-                int bombX = bomb.getPosition().getX();
-                int bombY = bomb.getPosition().getY();
-                int positionX = position.getX();
-                int positionY = position.getY();
-                // Verifique se a posição está ao longo de uma das linhas diagonais
-                if (((positionX <= (bombX+bomb.getExplosionRadius()) && positionX >= (bombX-bomb.getExplosionRadius()))&&positionY==bombY)) {
-                    return true;
-                }
-                if (((positionY <= (bombY+bomb.getExplosionRadius()) && positionY >= (bombY-bomb.getExplosionRadius()))&&positionX==bombX)) {
-                    return true;
-                }
-
+            if (bomb.hasExploded() && bomb.canBombExplode.contains(position)) {
+                return true;
             }
+        }
+        return false;
+    }
+    public boolean isBreakableWall(Position position) {
+        for (BreakableWall breakableWall : breakableWalls) {
+            if(breakableWall.getPosition().equals(position)) return true;
         }
         return false;
     }
@@ -157,6 +157,29 @@ public class Arena {
 
 
     public void addBomb(Bomb bomb) {
+        int x = bomb.getPosition().getX();
+        int y = bomb.getPosition().getY();
+        int explosionRadius = bomb.getExplosionRadius();
+        for(int i=x; i <= x+explosionRadius; i++){
+            Position aux = new Position(i, y);
+            if(isWall(aux) || isBreakableWall(aux)) break;
+            bomb.canBombExplode.add(aux);
+        }
+        for(int i=x; i >= x-explosionRadius; i--){
+            Position aux = new Position(i, y);
+            if(isWall(aux) || isBreakableWall(aux)) break;
+            bomb.canBombExplode.add(aux);
+        }
+        for(int i=y; i <= y+explosionRadius; i++){
+            Position aux = new Position(x, i);
+            if(isWall(aux) || isBreakableWall(aux)) break;
+            bomb.canBombExplode.add(aux);
+        }
+        for(int i=y; i >= y-explosionRadius; i--){
+            Position aux = new Position(x, i);
+            if(isWall(aux) || isBreakableWall(aux)) break;
+            bomb.canBombExplode.add(aux);
+        }
         bombs.add(bomb);
     }
 

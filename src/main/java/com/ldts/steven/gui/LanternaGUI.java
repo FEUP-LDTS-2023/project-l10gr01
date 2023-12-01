@@ -93,21 +93,8 @@ public class LanternaGUI implements GUI {
         int x = position.getX();
         int y = position.getY();
 
-        // Desenhe a explosão ao redor da posição da bomba explodida
-        drawCharacter(x, y, '*', "#FF0000"); // Ponto central da explosão
+        drawCharacter(x, y, '*', "#FF0000");
 
-        // Desenhe a explosão na horizontal (esquerda e direita)
-        for (int i = 1; i <= 3; i++) {
-
-            drawCharacter(x - i, y, '*', "#FF0000"); // Esquerda
-            drawCharacter(x + i, y, '*', "#FF0000"); // Direita
-        }
-
-        // Desenhe a explosão na vertical (cima e baixo)
-        for (int i = 1; i <= 3; i++) {
-            drawCharacter(x, y - i, '*', "#FF0000"); // Cima
-            drawCharacter(x, y + i, '*', "#FF0000"); // Baixo
-        }
     }
     public void drawText(Position position, String text, String color) {
         TextGraphics tg = screen.newTextGraphics();
