@@ -1,8 +1,15 @@
 package com.ldts.steven.model.game.elements;
+
+import com.ldts.steven.model.Position;
+
+import java.util.Vector;
+
 public class Bomb extends Element{
     private boolean exploded;
     private int explosionRadius;
     private long plantTime;
+
+    public Vector<Position> canBombExplode;
 
     public Bomb(int x, int y) {
         super(x, y);

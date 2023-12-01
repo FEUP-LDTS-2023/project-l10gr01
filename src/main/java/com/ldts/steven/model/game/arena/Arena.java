@@ -98,6 +98,10 @@ public class Arena {
         for (BreakableWall wall : breakableWalls)
             if (wall.getPosition().equals(position))
                 return false;
+        for (Bomb bomb : bombs){
+            if (bomb.getPosition().equals(position))
+                return false;
+        }
         return true;
     }
 
@@ -131,19 +135,26 @@ public class Arena {
 
     public boolean isBomb(Position position) {
         for (Bomb bomb : bombs) {
-            if(!bomb.hasExploded()) return false;
-            int bombX = bomb.getPosition().getX();
-            int bombY = bomb.getPosition().getY();
-            int positionX = position.getX();
-            int positionY = position.getY();
+            if (bomb.hasExploded()) {
+                int bombX = bomb.getPosition().getX();
+                int bombY = bomb.getPosition().getY();
+                int positionX = position.getX();
+                int positionY = position.getY();
+                // Verifique se a posição está ao longo de uma das linhas diagonais
+                if (((positionX <= (bombX+bomb.getExplosionRadius()) && positionX >= (bombX-bomb.getExplosionRadius()))&&positionY==bombY)) {
+                    return true;
+                }
+                if (((positionY <= (bombY+bomb.getExplosionRadius()) && positionY >= (bombY-bomb.getExplosionRadius()))&&positionX==bombX)) {
+                    return true;
+                }
 
-            // Verifique se a posição está dentro do raio de explosão (considerando um raio de 3)
-            if (Math.abs(bombX - positionX) <= 3 && Math.abs(bombY - positionY) <= 3) {
-                return true;
             }
         }
         return false;
     }
+
+
+
 
     public void addBomb(Bomb bomb) {
         bombs.add(bomb);
