@@ -99,7 +99,7 @@ public class Arena {
             if (wall.getPosition().equals(position))
                 return false;
         for (Bomb bomb : bombs){
-            if (bomb.getPosition().equals(position))
+            if (bomb.getPosition().equals(position) && !bomb.hasExploded())
                 return false;
         }
         return true;
@@ -125,11 +125,11 @@ public class Arena {
         }
         return false;
     }
-    public void killMonster(Monster monster){
+    public void killMonster(Position position){
         List<Monster> updatedMonsters = new ArrayList<>();
 
         for (Monster currentMonster : monsters) {
-            if (!currentMonster.equals(monster)) {
+            if (!currentMonster.getPosition().equals(position)) {
                 updatedMonsters.add(currentMonster);
                 // Adicione aqui qualquer outra lógica relacionada à eliminação do monstro
             }

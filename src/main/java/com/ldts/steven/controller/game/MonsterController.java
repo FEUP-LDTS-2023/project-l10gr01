@@ -32,7 +32,7 @@ public class MonsterController extends GameController {
             if (getModel().getSteven().getPosition().equals(position))
                 getModel().getSteven().decreaseLifes();
             if(getModel().isBomb(position)){
-                getModel().killMonster(monster);
+                getModel().killMonster(position);
             }
         }
     }
