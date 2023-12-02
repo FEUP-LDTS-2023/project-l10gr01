@@ -182,12 +182,11 @@ public class Arena {
         }
         bombs.add(bomb);
     }
-
+    public void removeBombs(Bomb bomb){
+        bomb.canBombExplode.clear();
+        bombs.remove(bomb);
+    }
     public List<Bomb> getBombs() {
         return bombs;
-    }
-
-    public void updateBombs() {
-        bombs.removeIf(Bomb::hasExploded);
     }
 }

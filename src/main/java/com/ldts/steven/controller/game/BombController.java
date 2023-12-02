@@ -6,6 +6,9 @@ import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
 import com.ldts.steven.model.game.elements.Bomb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BombController extends GameController{
     public BombController(Arena arena) {
         super(arena);
@@ -16,7 +19,15 @@ public class BombController extends GameController{
     }
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
+        List<Bomb> bombsToRemove = new ArrayList<>();
         for (Bomb bomb : getModel().getBombs()) {
-            bomb.update();}
+            bomb.update();
+            if (bomb.getDisappear()) {
+                bombsToRemove.add(bomb);
+            }
+        }
+        for(Bomb bomb : bombsToRemove){
+            getModel().removeBombs(bomb);
+        }
     }
 }
