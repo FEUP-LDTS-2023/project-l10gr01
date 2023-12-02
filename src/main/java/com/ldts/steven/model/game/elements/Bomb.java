@@ -27,9 +27,9 @@ public class Bomb extends Element{
     public void update() {
         // Verifique se o tempo decorrido é suficiente para a explosão
         long currentTime = System.currentTimeMillis();
-        if ((currentTime - plantTime > 3000) && currentTime-plantTime < 6000) { // 3 segundos
+        if ((currentTime - plantTime > 3000) && currentTime-plantTime < 5000) { // 3 segundos
             explode();
-        } else if (currentTime - plantTime > 6000) { // 6 segundos (3 segundos após a explosão)
+        } else if (currentTime - plantTime > 5000) { // 6 segundos (3 segundos após a explosão)
             disappear();
         }
     }

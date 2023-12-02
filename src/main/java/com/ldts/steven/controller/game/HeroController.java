@@ -40,7 +40,6 @@ public class HeroController extends GameController {
             }
         }
     }
-
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
         if (action == GUI.ACTION.UP) moveHeroUp();
