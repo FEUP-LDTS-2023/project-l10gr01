@@ -45,4 +45,5 @@ public class Bomb extends Element{
     public void setExplosionRadius(int explosionRadius) {
         this.explosionRadius = explosionRadius;
     }
+
 }

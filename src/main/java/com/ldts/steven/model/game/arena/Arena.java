@@ -152,35 +152,34 @@ public class Arena {
         }
         return false;
     }
-
-
-
-
     public void addBomb(Bomb bomb) {
         int x = bomb.getPosition().getX();
         int y = bomb.getPosition().getY();
         int explosionRadius = bomb.getExplosionRadius();
         for(int i=x; i <= x+explosionRadius; i++){
             Position aux = new Position(i, y);
-            if(isWall(aux) || isBreakableWall(aux)) break;
+            if(isWall(aux)) break;
             bomb.canBombExplode.add(aux);
         }
         for(int i=x; i >= x-explosionRadius; i--){
             Position aux = new Position(i, y);
-            if(isWall(aux) || isBreakableWall(aux)) break;
+            if(isWall(aux)) break;
             bomb.canBombExplode.add(aux);
         }
         for(int i=y; i <= y+explosionRadius; i++){
             Position aux = new Position(x, i);
-            if(isWall(aux) || isBreakableWall(aux)) break;
+            if(isWall(aux)) break;
             bomb.canBombExplode.add(aux);
         }
         for(int i=y; i >= y-explosionRadius; i--){
             Position aux = new Position(x, i);
-            if(isWall(aux) || isBreakableWall(aux)) break;
+            if(isWall(aux)) break;
             bomb.canBombExplode.add(aux);
         }
         bombs.add(bomb);
+    }
+    public void breakWall(BreakableWall wall){
+        breakableWalls.remove(wall);
     }
     public void removeBombs(Bomb bomb){
         bomb.canBombExplode.clear();
