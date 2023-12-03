@@ -4,6 +4,7 @@ import com.ldts.steven.Game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
+import com.ldts.steven.model.game.elements.BreakableWall;
 
 public class HeroController extends GameController {
 
@@ -37,6 +38,11 @@ public class HeroController extends GameController {
                 getModel().eraseLife(position);
                 getModel().getSteven().increaseLifes();
             }
+            if(getModel().isBombUpgrade(position)){
+                getModel().setUpgrade(true);
+                getModel().removeBombUpgrade(position);
+            }
+
         }
     }
     @Override

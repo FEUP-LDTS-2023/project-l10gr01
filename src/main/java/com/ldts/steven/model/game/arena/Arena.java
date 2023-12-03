@@ -5,12 +5,14 @@ import com.ldts.steven.model.game.elements.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class Arena {
     private int width;
     private int height;
 
     private Steven steven;
+    private boolean upgrade;
     private List<Monster> monsters;
     private List<Wall> walls;
     private List<BreakableWall> breakableWalls;
@@ -18,10 +20,14 @@ public class Arena {
     private List<Life> lifes;
     private List<Bomb> bombs;
 
+    private List<BombUpgrade> bombUpgrades;
+
     public Arena(int width, int height) {
         this.height = height;
         this.width = width;
+        this.upgrade = false;
         this.bombs = new ArrayList<>();
+        this.bombUpgrades = new ArrayList<>();
     }
 
 
@@ -69,6 +75,10 @@ public class Arena {
         return lifes;
     }
 
+    public void setUpgrade(boolean upgrade) {
+        this.upgrade = upgrade;
+    }
+
     public void eraseLife(Position position) {
         for (int i = 0; i < lifes.size(); i++) {
             if (lifes.get(i).getPosition().equals(position) && steven.getLifes() < 3) {
@@ -90,6 +100,7 @@ public class Arena {
     public void setBreakableWalls(List<BreakableWall> breakableWalls) {
         this.breakableWalls = breakableWalls;
     }
+
 
     public boolean isEmpty(Position position) {
         for (Wall wall : walls)
@@ -125,6 +136,24 @@ public class Arena {
         }
         return false;
     }
+
+    public boolean isBombUpgrade(Position position) {
+        for (BombUpgrade b : bombUpgrades) {
+            if (b.getPosition().equals(position))
+                return true;
+        }
+        return false;
+    }
+
+    public void removeBombUpgrade(Position position) {
+        for (BombUpgrade b : bombUpgrades) {
+            if (b.getPosition().equals(position)) {
+                bombUpgrades.remove(b);
+                break;
+            }
+        }
+    }
+
     public void killMonster(Position position){
         List<Monster> updatedMonsters = new ArrayList<>();
 
@@ -153,6 +182,7 @@ public class Arena {
         return false;
     }
     public void addBomb(Bomb bomb) {
+        if(upgrade) bomb.setExplosionRadius(10);
         int x = bomb.getPosition().getX();
         int y = bomb.getPosition().getY();
         int explosionRadius = bomb.getExplosionRadius();
@@ -180,7 +210,17 @@ public class Arena {
     }
     public void breakWall(BreakableWall wall){
         breakableWalls.remove(wall);
+        if(wall.hasBombUpgrade()){
+            BombUpgrade b = new BombUpgrade(wall.getPosition().getX(),wall.getPosition().getY());
+            bombUpgrades.add(b);
+        }
+
     }
+
+    public List<BombUpgrade> getBombUpgrades() {
+        return bombUpgrades;
+    }
+
     public void removeBombs(Bomb bomb){
         bomb.canBombExplode.clear();
         bombs.remove(bomb);

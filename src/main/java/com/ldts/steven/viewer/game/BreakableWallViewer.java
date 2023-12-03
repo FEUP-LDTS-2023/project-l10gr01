@@ -5,7 +5,6 @@ import com.ldts.steven.model.game.elements.BreakableWall;
 
 public class BreakableWallViewer implements ElementViewer<BreakableWall> {
     @Override
-    public void draw(BreakableWall breakableWall, GUI gui) {
-        gui.drawBreakableWall(breakableWall.getPosition());
+    public void draw(BreakableWall breakableWall, GUI gui) {gui.drawBreakableWall(breakableWall.getPosition());
     }
 }

@@ -23,6 +23,7 @@ public interface GUI {
     void drawBombExploded(Position position);
     void drawText(Position position, String text, String color);
 
+    void drawBombUpgrade(Position position);
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, SPACE}
 
     ACTION getNextAction() throws IOException;
