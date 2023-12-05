@@ -14,7 +14,7 @@ public class Bomb extends Element{
     public Bomb(int x, int y, int r) {
         super(x, y);
         this.exploded = false;
-        this.explosionRadius = r; // Pode mudar se tiver com poderes, etc.
+        this.explosionRadius = r;
         this.plantTime = System.currentTimeMillis();
         this.canBombExplode = new Vector<>();
     };

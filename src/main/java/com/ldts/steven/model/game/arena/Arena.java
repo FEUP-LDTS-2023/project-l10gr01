@@ -17,6 +17,18 @@ public class Arena {
     private List<Wall> walls;
     private List<BreakableWall> breakableWalls;
     private long getUpTime;
+    private long getUnlimTime;
+
+
+
+
+
+
+
+
+
+
+
 
     private List<Life> lifes;
     private List<Bomb> bombs;
