@@ -16,9 +16,12 @@ public class BombController extends GameController{
         super(arena);
         hurtSteven = false;
     }
-    public void plantBomb(Position position){
-        Bomb bomb = new Bomb(position.getX(), position.getY());
+    public void plantBomb(Position position, int r){
+        Bomb bomb = new Bomb(position.getX(), position.getY(), r);
         getModel().addBomb(bomb);
+    }
+    public void setHurtSteven(boolean flag){
+        this.hurtSteven=flag;
     }
     @Override
     public void step(Game game, GUI.ACTION action, long time) {

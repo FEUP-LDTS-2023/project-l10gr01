@@ -33,7 +33,10 @@ public class HeroController extends GameController {
     private void moveHero(Position position) {
         if (getModel().isEmpty(position)) {
             getModel().getSteven().setPosition(position);
-            if (getModel().isMonster(position) || getModel().isBomb(position)) getModel().getSteven().decreaseLifes();
+            if (getModel().isMonster(position) || getModel().isBomb(position)) {
+                bombController.setHurtSteven(true);
+                getModel().getSteven().decreaseLifes();
+            }
             if (getModel().isLife(position)) {
                 getModel().eraseLife(position);
                 getModel().getSteven().increaseLifes();
@@ -46,7 +49,6 @@ public class HeroController extends GameController {
                 getModel().setMaxBombs(1000);
                 getModel().removeUnlimitedBomb(position);
             }
-
         }
     }
     @Override
@@ -57,8 +59,9 @@ public class HeroController extends GameController {
         if (action == GUI.ACTION.LEFT) moveHeroLeft();
         if (action == GUI.ACTION.SPACE) {
             Position heroPosition = getModel().getSteven().getPosition();
-            bombController.plantBomb(heroPosition);
+            if(getModel().getUpgrade()) bombController.plantBomb(heroPosition, 5);
+            else bombController.plantBomb(heroPosition, 3);
         }
-
+        getModel().stopUpgrade(System.currentTimeMillis());
     }
 }

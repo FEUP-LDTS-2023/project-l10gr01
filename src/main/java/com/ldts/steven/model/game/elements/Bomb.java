@@ -11,10 +11,10 @@ public class Bomb extends Element{
     private boolean disappear;
     public Vector<Position> canBombExplode;
 
-    public Bomb(int x, int y) {
+    public Bomb(int x, int y, int r) {
         super(x, y);
         this.exploded = false;
-        this.explosionRadius = 3; // Pode mudar se tiver com poderes, etc.
+        this.explosionRadius = r; // Pode mudar se tiver com poderes, etc.
         this.plantTime = System.currentTimeMillis();
         this.canBombExplode = new Vector<>();
     };

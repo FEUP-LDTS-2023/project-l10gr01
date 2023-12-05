@@ -16,6 +16,7 @@ public class Arena {
     private List<Monster> monsters;
     private List<Wall> walls;
     private List<BreakableWall> breakableWalls;
+    private long getUpTime;
 
     private List<Life> lifes;
     private List<Bomb> bombs;
@@ -82,9 +83,11 @@ public class Arena {
 
     public void setUpgrade(boolean upgrade) {
         this.upgrade = upgrade;
+        this.getUpTime = System.currentTimeMillis();
     }
-
-
+    public void stopUpgrade(long actualTime) {
+        if (actualTime - getUpTime > 15000) this.upgrade=false;
+    }
     public void eraseLife(Position position) {
         for (int i = 0; i < lifes.size(); i++) {
             if (lifes.get(i).getPosition().equals(position) && steven.getLifes() < 3) {
@@ -206,8 +209,6 @@ public class Arena {
         return false;
     }
     public void addBomb(Bomb bomb) {
-        if(upgrade) bomb.setExplosionRadius(10);
-        else bomb.setExplosionRadius(3);
         int x = bomb.getPosition().getX();
         int y = bomb.getPosition().getY();
         int explosionRadius = bomb.getExplosionRadius();
@@ -266,4 +267,5 @@ public class Arena {
     public List<Bomb> getBombs() {
         return bombs;
     }
+    public boolean getUpgrade(){return upgrade;}
 }
