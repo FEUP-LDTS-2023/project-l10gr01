@@ -7,8 +7,8 @@ public class BreakableWall extends Element{
 
     public BreakableWall(int x, int y) {
         super(x,y);
-        this.hasBombUpgrade = Math.random() > 0.80;
-        this.hasUnlimitedBomb = Math.random() > 0.80;
+        this.hasBombUpgrade = Math.random() > 0.95;
+        this.hasUnlimitedBomb = Math.random() > 0.95;
     }
 
     public boolean HasUnlimitedBomb() {
