@@ -10,6 +10,7 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.ldts.steven.model.game.elements.UnlimitedBombs;
 
 import java.awt.*;
 import java.io.File;
@@ -103,6 +104,14 @@ public class LanternaGUI implements GUI {
 
         drawCharacter(x, y, 'X', "#FF0000");
 
+    }
+
+    @Override
+    public void drawUnlimitedBomb(Position position) {
+        int x = position.getX();
+        int y = position.getY();
+
+        drawCharacter(x, y, 'U', "#00FF00");
     }
 
     public void drawText(Position position, String text, String color) {

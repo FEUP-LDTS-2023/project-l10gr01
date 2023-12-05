@@ -19,8 +19,11 @@ public class Arena {
 
     private List<Life> lifes;
     private List<Bomb> bombs;
+    private int maxBombs;
 
     private List<BombUpgrade> bombUpgrades;
+
+    private List<UnlimitedBombs> unlimitedBombs;
 
     public Arena(int width, int height) {
         this.height = height;
@@ -28,6 +31,8 @@ public class Arena {
         this.upgrade = false;
         this.bombs = new ArrayList<>();
         this.bombUpgrades = new ArrayList<>();
+        this.unlimitedBombs = new ArrayList<>();
+        this.maxBombs = 1;
     }
 
 
@@ -78,6 +83,7 @@ public class Arena {
     public void setUpgrade(boolean upgrade) {
         this.upgrade = upgrade;
     }
+
 
     public void eraseLife(Position position) {
         for (int i = 0; i < lifes.size(); i++) {
@@ -145,10 +151,28 @@ public class Arena {
         return false;
     }
 
+    public boolean isUnlimitedBomb(Position position){
+        for(UnlimitedBombs b : unlimitedBombs){
+            if(b.getPosition().equals(position)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void removeBombUpgrade(Position position) {
         for (BombUpgrade b : bombUpgrades) {
             if (b.getPosition().equals(position)) {
                 bombUpgrades.remove(b);
+                break;
+            }
+        }
+    }
+
+    public void removeUnlimitedBomb(Position position) {
+        for (UnlimitedBombs b : unlimitedBombs) {
+            if (b.getPosition().equals(position)) {
+                unlimitedBombs.remove(b);
                 break;
             }
         }
@@ -183,6 +207,7 @@ public class Arena {
     }
     public void addBomb(Bomb bomb) {
         if(upgrade) bomb.setExplosionRadius(10);
+        else bomb.setExplosionRadius(3);
         int x = bomb.getPosition().getX();
         int y = bomb.getPosition().getY();
         int explosionRadius = bomb.getExplosionRadius();
@@ -206,7 +231,8 @@ public class Arena {
             if(isWall(aux)) break;
             bomb.canBombExplode.add(aux);
         }
-        bombs.add(bomb);
+        if(bombs.size() < maxBombs)
+            bombs.add(bomb);
     }
     public void breakWall(BreakableWall wall){
         breakableWalls.remove(wall);
@@ -214,11 +240,23 @@ public class Arena {
             BombUpgrade b = new BombUpgrade(wall.getPosition().getX(),wall.getPosition().getY());
             bombUpgrades.add(b);
         }
+        else if(wall.HasUnlimitedBomb()){
+            UnlimitedBombs b = new UnlimitedBombs(wall.getPosition().getX(),wall.getPosition().getY());
+            unlimitedBombs.add(b);
+        }
 
     }
 
     public List<BombUpgrade> getBombUpgrades() {
         return bombUpgrades;
+    }
+
+    public List<UnlimitedBombs> getUnlimitedBombs() {
+        return unlimitedBombs;
+    }
+
+    public void setMaxBombs(int maxBombs) {
+        this.maxBombs = maxBombs;
     }
 
     public void removeBombs(Bomb bomb){

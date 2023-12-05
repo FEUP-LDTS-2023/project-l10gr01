@@ -2,6 +2,8 @@ package com.ldts.steven.gui;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.ldts.steven.model.Position;
+import com.ldts.steven.model.game.elements.UnlimitedBombs;
+
 import java.io.IOException;
 public interface GUI {
     void drawHero(Position position);
@@ -24,6 +26,9 @@ public interface GUI {
     void drawText(Position position, String text, String color);
 
     void drawBombUpgrade(Position position);
+
+    void drawUnlimitedBomb(Position position);
+
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, SPACE}
 
     ACTION getNextAction() throws IOException;

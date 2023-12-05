@@ -25,6 +25,8 @@ public class GameViewer extends Viewer<Arena> {
         drawElements(gui, getModel().getBombs(), new BombViewer());
         if(!getModel().getBombUpgrades().isEmpty())
             drawElements(gui, getModel().getBombUpgrades(), new BombUpgradeViewer());
+        if(!getModel().getUnlimitedBombs().isEmpty())
+            drawElements(gui,getModel().getUnlimitedBombs(), new UnlimitedBombsViewer());
 
 
         gui.drawText(new Position(0, 0), "LIFES: " + getModel().getSteven().getLifes(), "#FFD700");
