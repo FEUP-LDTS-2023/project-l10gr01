@@ -2,10 +2,7 @@ package com.ldts.steven.model.game.arena;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.elements.*;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Arena {
     private int width;
@@ -18,18 +15,6 @@ public class Arena {
     private List<BreakableWall> breakableWalls;
     private long getUpTime;
     private long getUnlimTime;
-
-
-
-
-
-
-
-
-
-
-
-
     private List<Life> lifes;
     private List<Bomb> bombs;
     private int maxBombs;
@@ -208,7 +193,8 @@ public class Arena {
 
     public boolean isBomb(Position position) {
         for (Bomb bomb : bombs) {
-            if (bomb.hasExploded() && bomb.canBombExplode.contains(position)) {
+            Vector<Position> aux = bomb.getCanBombExplode();
+            if (bomb.hasExploded() && aux.contains(position)) {
                 return true;
             }
         }
@@ -221,28 +207,29 @@ public class Arena {
         return false;
     }
     public void addBomb(Bomb bomb) {
+
         int x = bomb.getPosition().getX();
         int y = bomb.getPosition().getY();
         int explosionRadius = bomb.getExplosionRadius();
         for(int i=x; i <= x+explosionRadius; i++){
             Position aux = new Position(i, y);
             if(isWall(aux)) break;
-            bomb.canBombExplode.add(aux);
+            bomb.addCanBombExplode(aux);
         }
         for(int i=x; i >= x-explosionRadius; i--){
             Position aux = new Position(i, y);
             if(isWall(aux)) break;
-            bomb.canBombExplode.add(aux);
+            bomb.addCanBombExplode(aux);
         }
         for(int i=y; i <= y+explosionRadius; i++){
             Position aux = new Position(x, i);
             if(isWall(aux)) break;
-            bomb.canBombExplode.add(aux);
+            bomb.addCanBombExplode(aux);
         }
         for(int i=y; i >= y-explosionRadius; i--){
             Position aux = new Position(x, i);
             if(isWall(aux)) break;
-            bomb.canBombExplode.add(aux);
+            bomb.addCanBombExplode(aux);
         }
         if(bombs.size() < maxBombs)
             bombs.add(bomb);
@@ -273,7 +260,6 @@ public class Arena {
     }
 
     public void removeBombs(Bomb bomb){
-        bomb.canBombExplode.clear();
         bombs.remove(bomb);
     }
     public List<Bomb> getBombs() {

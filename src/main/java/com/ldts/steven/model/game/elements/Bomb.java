@@ -4,46 +4,47 @@ import com.ldts.steven.model.Position;
 
 import java.util.Vector;
 
-public class Bomb extends Element{
+public abstract class Bomb extends Element {
+
     private boolean exploded;
-    protected int explosionRadius;
     private long plantTime;
     private boolean disappear;
+    protected int explosionRadius;
     public Vector<Position> canBombExplode;
 
-    public Bomb(int x, int y, int r) {
-        super(x, y);
-        this.exploded = false;
-        this.explosionRadius = r;
-        this.plantTime = System.currentTimeMillis();
+    public Bomb(int x, int y) {
+        super(x,y);
         this.canBombExplode = new Vector<>();
-    };
-
-    private void explode() {
-        this.exploded = true;
+        this.exploded = false;
+        this.disappear = false;
     }
-    private void disappear() {this.disappear = true;}
+
+    public void explode() {
+    }
+
+    public void disappear() {
+    }
 
     public void update() {
-        // Verifique se o tempo decorrido é suficiente para a explosão
-        long currentTime = System.currentTimeMillis();
-        if ((currentTime - plantTime > 3000) && currentTime-plantTime < 5000) { // 3 segundos
-            explode();
-        } else if (currentTime - plantTime > 5000) { // 6 segundos (3 segundos após a explosão)
-            disappear();
-        }
     }
-    public boolean hasExploded() {
-        return exploded;
-    }
-    public boolean getDisappear(){return disappear;}
-    public int getExplosionRadius() {
+    public int getExplosionRadius(){
         return explosionRadius;
     }
 
-
-    public void setExplosionRadius(int explosionRadius) {
-        this.explosionRadius = explosionRadius;
+    public void addCanBombExplode(Position position) {
     }
+
+    public Vector<Position> getCanBombExplode() {
+        return canBombExplode;
+    }
+
+    public boolean hasExploded() {
+        return exploded;
+    }
+
+    public boolean getDisappear() {
+        return disappear;
+    }
+
 
 }

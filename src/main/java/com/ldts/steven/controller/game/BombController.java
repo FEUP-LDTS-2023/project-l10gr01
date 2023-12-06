@@ -6,6 +6,8 @@ import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
 import com.ldts.steven.model.game.elements.Bomb;
 import com.ldts.steven.model.game.elements.BreakableWall;
+import com.ldts.steven.model.game.elements.NormalBomb;
+import com.ldts.steven.model.game.elements.UpgradedBomb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +19,14 @@ public class BombController extends GameController{
         hurtSteven = false;
     }
     public void plantBomb(Position position, int r){
-        Bomb bomb = new Bomb(position.getX(), position.getY(), r);
-        getModel().addBomb(bomb);
+        if(getModel().getUpgrade()){
+            Bomb bomb = new UpgradedBomb(position.getX(), position.getY(), r);
+            getModel().addBomb(bomb);
+    }
+        else{
+            Bomb bomb = new NormalBomb(position.getX(), position.getY(), r);
+            getModel().addBomb(bomb);
+        }
     }
     public void setHurtSteven(boolean flag){
         this.hurtSteven=flag;
