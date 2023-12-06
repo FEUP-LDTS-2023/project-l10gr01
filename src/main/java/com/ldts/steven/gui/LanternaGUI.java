@@ -38,7 +38,7 @@ public class LanternaGUI implements GUI {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
 
-        Font loadedFont = font.deriveFont(Font.PLAIN, 5);
+        Font loadedFont = font.deriveFont(Font.PLAIN, 25);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
         return fontConfig;
     }
@@ -71,20 +71,20 @@ public class LanternaGUI implements GUI {
     @Override
     public void drawWall(Position position) {
         {
-            drawCharacter(position.getX()*5, position.getY()*5, '#', "#F474BF");
+            drawCharacter(position.getX(), position.getY(), '#', "#F474BF");
         }
     }
     @Override
     public void drawBreakableWall(Position position) {
         {
-            drawCharacter(position.getX()*5, position.getY()*5, '#', "#6F2DA8");
+            drawCharacter(position.getX(), position.getY(), '#', "#6F2DA8");
         }
     }
 
     @Override
     public void drawLife(Position position){
         {
-            drawCharacter(position.getX()*5, position.getY()*5, '@',"#E6D4A2");
+            drawCharacter(position.getX(), position.getY(), '@',"#E6D4A2");
         }
     }
     public void drawBomb(Position position){
@@ -94,7 +94,7 @@ public class LanternaGUI implements GUI {
         int x = position.getX();
         int y = position.getY();
 
-        drawCharacter(x*5, y*5, '*', "#FF0000");
+        drawCharacter(x, y,'*', "#FF0000");
 
     }
 
@@ -102,7 +102,7 @@ public class LanternaGUI implements GUI {
         int x = position.getX();
         int y = position.getY();
 
-        drawCharacter(x*5, y*5, 'X', "#FF0000");
+        drawCharacter(x, y, 'X', "#FF0000");
 
     }
 
@@ -111,19 +111,19 @@ public class LanternaGUI implements GUI {
         int x = position.getX();
         int y = position.getY();
 
-        drawCharacter(x*5, y*5, 'U', "#00FF00");
+        drawCharacter(x, y, 'U', "#00FF00");
     }
 
     public void drawText(Position position, String text, String color) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
-        tg.putString(position.getX()*5, position.getY()*5, text);
+        tg.putString(position.getX(), position.getY(), text);
     }
 
 
     @Override
     public void drawMonster(Position position) {
-        drawCharacter(position.getX()*5, position.getY()*5, 'M', "#90FF5D");
+        drawCharacter(position.getX(), position.getY(), 'M', "#90FF5D");
     }
 
     public ACTION getNextAction() throws IOException {
