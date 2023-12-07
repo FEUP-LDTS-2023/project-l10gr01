@@ -18,11 +18,13 @@ public class Instruction {
                 "You can choose between 3 different",
                 "levels, each one in increased difficulty.",
                 "Characters: ",
+                "",
                 "M -> Monster",
                 "S -> Steven",
                 "@ -> Life",
                 "X -> Upgraded Bomb",
                 "U -> Unlimited Bomb Upgrade",
+                "",
                 "Exit"
         );
     }
@@ -48,7 +50,7 @@ public class Instruction {
     }
 
     public boolean isSelectedExit() {
-        return isSelected(13);
+        return isSelected(15);
     }
 
     public int getNumberEntries() {
