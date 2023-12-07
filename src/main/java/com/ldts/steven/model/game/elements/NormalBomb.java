@@ -11,7 +11,7 @@ public class NormalBomb extends Bomb {
     private boolean disappear;
     public Vector<Position> canBombExplode;
 
-    public NormalBomb(int x, int y, int r) {
+    public NormalBomb(int x, int y) {
         super(x, y);
         this.exploded = false;
         this.explosionRadius = 2;

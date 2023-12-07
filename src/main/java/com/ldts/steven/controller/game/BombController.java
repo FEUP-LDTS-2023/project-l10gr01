@@ -18,13 +18,13 @@ public class BombController extends GameController{
         super(arena);
         hurtSteven = false;
     }
-    public void plantBomb(Position position, int r){
+    public void plantBomb(Position position){
         if(getModel().getUpgrade()){
-            Bomb bomb = new UpgradedBomb(position.getX(), position.getY(), r);
+            Bomb bomb = new UpgradedBomb(position.getX(), position.getY());
             getModel().addBomb(bomb);
     }
         else{
-            Bomb bomb = new NormalBomb(position.getX(), position.getY(), r);
+            Bomb bomb = new NormalBomb(position.getX(), position.getY());
             getModel().addBomb(bomb);
         }
     }

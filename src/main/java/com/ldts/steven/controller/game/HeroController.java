@@ -59,8 +59,8 @@ public class HeroController extends GameController {
         if (action == GUI.ACTION.LEFT) moveHeroLeft();
         if (action == GUI.ACTION.SPACE) {
             Position heroPosition = getModel().getSteven().getPosition();
-            if(getModel().getUpgrade()) bombController.plantBomb(heroPosition, 5);
-            else bombController.plantBomb(heroPosition, 3);
+            if(getModel().getUpgrade()) bombController.plantBomb(heroPosition);
+            else bombController.plantBomb(heroPosition);
         }
         getModel().stopUpgrade(System.currentTimeMillis());
     }

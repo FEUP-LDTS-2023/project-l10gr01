@@ -11,7 +11,7 @@ public class UpgradedBomb extends Bomb {
     private boolean disappear;
     public Vector<Position> canBombExplode;
 
-    public UpgradedBomb(int x, int y, int r) {
+    public UpgradedBomb(int x, int y) {
         super(x, y);
         this.exploded = false;
         this.explosionRadius = 5;
