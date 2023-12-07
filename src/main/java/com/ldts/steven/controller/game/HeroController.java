@@ -42,11 +42,11 @@ public class HeroController extends GameController {
                 getModel().getSteven().increaseLifes();
             }
             if(getModel().isBombUpgrade(position)){
-                getModel().setUpgrade(true);
+                getModel().getSteven().setBombUp(true);
                 getModel().removeBombUpgrade(position);
             }
             if(getModel().isUnlimitedBomb(position)){
-                getModel().setMaxBombs(1000);
+                getModel().setUnlimitedUp(true);
                 getModel().removeUnlimitedBomb(position);
             }
         }
@@ -61,6 +61,7 @@ public class HeroController extends GameController {
             Position heroPosition = getModel().getSteven().getPosition();
             bombController.plantBomb(heroPosition);
         }
-        getModel().stopUpgrade(System.currentTimeMillis());
+        getModel().getSteven().stopBombUp(System.currentTimeMillis());
+        getModel().checkUnlimitedUp(System.currentTimeMillis());
     }
 }

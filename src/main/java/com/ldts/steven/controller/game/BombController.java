@@ -19,7 +19,7 @@ public class BombController extends GameController{
         hurtSteven = false;
     }
     public void plantBomb(Position position){
-        if(getModel().getUpgrade()){
+        if(getModel().getSteven().bombUp){
             Bomb bomb = new UpgradedBomb(position.getX(), position.getY());
             getModel().addBomb(bomb);
     }

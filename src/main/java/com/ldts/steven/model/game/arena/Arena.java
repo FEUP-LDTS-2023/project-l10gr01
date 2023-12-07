@@ -9,12 +9,11 @@ public class Arena {
     private int height;
 
     private Steven steven;
-    private boolean upgrade;
     private List<Monster> monsters;
     private List<Wall> walls;
     private List<BreakableWall> breakableWalls;
-    private long getUpTime;
-    private long getUnlimTime;
+    public long unlimitedUpTime;
+    public boolean unlimitedUp;
     private List<Life> lifes;
     private List<Bomb> bombs;
     private int maxBombs;
@@ -26,7 +25,6 @@ public class Arena {
     public Arena(int width, int height) {
         this.height = height;
         this.width = width;
-        this.upgrade = false;
         this.bombs = new ArrayList<>();
         this.bombUpgrades = new ArrayList<>();
         this.unlimitedBombs = new ArrayList<>();
@@ -78,13 +76,8 @@ public class Arena {
         return lifes;
     }
 
-    public void setUpgrade(boolean upgrade) {
-        this.upgrade = upgrade;
-        this.getUpTime = System.currentTimeMillis();
-    }
-    public void stopUpgrade(long actualTime) {
-        if (actualTime - getUpTime > 15000) this.upgrade=false;
-    }
+
+
     public void eraseLife(Position position) {
         for (int i = 0; i < lifes.size(); i++) {
             if (lifes.get(i).getPosition().equals(position) && steven.getLifes() < 3) {
@@ -265,5 +258,15 @@ public class Arena {
     public List<Bomb> getBombs() {
         return bombs;
     }
-    public boolean getUpgrade(){return upgrade;}
+    public void setUnlimitedUp(boolean upgrade){
+        this.unlimitedUp=upgrade;
+        this.unlimitedUpTime=System.currentTimeMillis();
+        setMaxBombs(1000);
+    }
+    public void checkUnlimitedUp(long actualTime){
+        if (actualTime - unlimitedUpTime > 15000){
+            this.unlimitedUp=false;
+            setMaxBombs(1);
+        }
+    }
 }
