@@ -122,8 +122,11 @@ public class LanternaGUI implements GUI {
 
 
     @Override
-    public void drawMonster(Position position) {
+    public void drawNormalMonster(Position position) {
         drawCharacter(position.getX(), position.getY(), 'M', "#90FF5D");
+    }
+    public void drawFollowerMonster(Position position){
+        drawCharacter(position.getX(), position.getY(), 'M', "#021EAA");
     }
 
     public ACTION getNextAction() throws IOException {

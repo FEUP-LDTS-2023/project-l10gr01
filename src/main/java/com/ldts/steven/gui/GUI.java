@@ -10,8 +10,8 @@ public interface GUI {
 
     void drawWall(Position position);
 
-    void drawMonster(Position position);
-
+    void drawNormalMonster(Position position);
+    void drawFollowerMonster(Position position);
     void clear();
 
     void refresh() throws IOException;
