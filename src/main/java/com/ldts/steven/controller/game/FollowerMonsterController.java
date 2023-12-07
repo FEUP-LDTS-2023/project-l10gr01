@@ -8,10 +8,10 @@ import com.ldts.steven.model.game.elements.Monster;
 
 import java.io.IOException;
 
-public class MonsterController extends GameController {
+public class FollowerMonsterController extends GameController {
     private long lastMovement;
 
-    public MonsterController(Arena arena) {
+    public FollowerMonsterController(Arena arena) {
         super(arena);
 
         this.lastMovement = 0;
