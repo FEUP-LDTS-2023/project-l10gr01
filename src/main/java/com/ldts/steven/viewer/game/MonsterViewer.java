@@ -7,6 +7,8 @@ import com.ldts.steven.model.game.elements.Monster;
 public class MonsterViewer implements ElementViewer<Monster> {
     @Override
     public void draw(Monster monster, GUI gui) {
-        gui.drawMonster(monster.getPosition());
+
+        if(!monster.follower)gui.drawNormalMonster(monster.getPosition());
+        else gui.drawFollowerMonster(monster.getPosition());
     }
 }
