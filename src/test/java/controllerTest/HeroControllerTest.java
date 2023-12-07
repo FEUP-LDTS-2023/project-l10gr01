@@ -126,5 +126,26 @@ public class HeroControllerTest {
         verify(bombControllerMock).plantBomb(stevenPosition, 5);
         verify(gameMock, never()).setState(null);
     }
+    @Test
+    public void moveHeroUpBombUpgradeCollisionTest() {
+        GUI.ACTION action = GUI.ACTION.UP;
 
+        Game gameMock = mock(Game.class);
+
+        Position heroPosition = new Position(5, 5);
+
+        when(arenaMock.isEmpty(heroPosition.getUp())).thenReturn(true);
+        when(arenaMock.isBombUpgrade(heroPosition.getUp())).thenReturn(true);
+
+        Steven heroMock = mock(Steven.class);
+        when(heroMock.getPosition()).thenReturn(heroPosition);
+        when(arenaMock.getSteven()).thenReturn(heroMock);
+
+        heroController.step(gameMock, action, 0);
+
+        verify(heroMock).setPosition(heroPosition.getUp());
+        verify(arenaMock).setUpgrade(true);
+        verify(arenaMock).removeBombUpgrade(heroPosition.getUp());
+        verify(gameMock, never()).setState(null);
+    }
 }

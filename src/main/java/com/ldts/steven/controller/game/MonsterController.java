@@ -26,7 +26,7 @@ public class MonsterController extends GameController {
         }
     }
 
-    private void moveMonster(Monster monster, Position position) {
+    public void moveMonster(Monster monster, Position position) {
         if (getModel().isEmpty(position)) {
             monster.setPosition(position);
             if (getModel().getSteven().getPosition().equals(position))
