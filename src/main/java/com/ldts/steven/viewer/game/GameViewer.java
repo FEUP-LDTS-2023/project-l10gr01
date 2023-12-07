@@ -6,6 +6,7 @@ import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
 import com.ldts.steven.model.game.elements.Bomb;
 import com.ldts.steven.model.game.elements.Element;
+import com.ldts.steven.model.game.elements.Life;
 import com.ldts.steven.viewer.Viewer;
 
 import java.util.List;
@@ -27,7 +28,9 @@ public class GameViewer extends Viewer<Arena> {
             drawElements(gui, getModel().getBombUpgrades(), new BombUpgradeViewer());
         if(!getModel().getUnlimitedBombs().isEmpty())
             drawElements(gui,getModel().getUnlimitedBombs(), new UnlimitedBombsViewer());
-
+        if(!getModel().getLifes().isEmpty()){
+            drawElements(gui,getModel().getLifes(), new LifeViewer());
+        }
 
         gui.drawText(new Position(0, 0), "LIFES: " + getModel().getSteven().getLifes(), "#FFD700");
     }

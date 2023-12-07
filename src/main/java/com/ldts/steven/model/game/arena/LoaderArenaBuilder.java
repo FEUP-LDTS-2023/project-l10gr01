@@ -68,18 +68,6 @@ public class LoaderArenaBuilder extends ArenaBuilder {
         return breakablewalls;
     }
 
-    @Override
-    protected List<Life> createLifes() {
-        List<Life> lifes = new ArrayList<>();
-
-        for (int y = 0; y < lines.size(); y++) {
-            String line = lines.get(y);
-            for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'L') lifes.add(new Life(x, y));
-        }
-
-        return lifes;
-    }
 
 
     @Override

@@ -13,7 +13,7 @@ public abstract class ArenaBuilder {
         arena.setMonsters(createMonsters());
         arena.setWalls(createWalls());
         arena.setBreakableWalls(createBreakableWalls());
-        arena.setLifes(createLifes());
+
 
         return arena;
     }
@@ -28,6 +28,6 @@ public abstract class ArenaBuilder {
 
     protected abstract Steven createSteven();
     protected abstract List<BreakableWall> createBreakableWalls();
-    protected abstract List<Life> createLifes();
+
 
 }

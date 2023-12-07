@@ -4,13 +4,11 @@ import com.ldts.steven.Game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
-import com.ldts.steven.model.game.elements.Bomb;
-import com.ldts.steven.model.game.elements.BreakableWall;
-import com.ldts.steven.model.game.elements.NormalBomb;
-import com.ldts.steven.model.game.elements.UpgradedBomb;
+import com.ldts.steven.model.game.elements.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class BombController extends GameController{
     private boolean hurtSteven;
@@ -48,6 +46,19 @@ public class BombController extends GameController{
             }
             for(BreakableWall breakableWall : wallsToBreak){
                 getModel().breakWall(breakableWall);
+                Random random = new Random();
+                int numRandom = random.nextInt(100);
+
+                if(numRandom < 10){
+                    getModel().getUnlimitedBombs().add(new UnlimitedBombs(breakableWall.getPosition().getX(),breakableWall.getPosition().getY()));
+
+                }else if(numRandom < 20){
+                    getModel().getLifes().add(new Life(breakableWall.getPosition().getX(),breakableWall.getPosition().getY()));
+                }else if(numRandom < 30){
+                    getModel().getBombUpgrades().add(new BombUpgrade(breakableWall.getPosition().getX(),breakableWall.getPosition().getY()));
+
+                }
+
             }
             if (bomb.getDisappear()) {
                 bombsToRemove.add(bomb);

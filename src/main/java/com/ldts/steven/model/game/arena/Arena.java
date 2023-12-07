@@ -30,6 +30,7 @@ public class Arena {
         this.bombs = new ArrayList<>();
         this.bombUpgrades = new ArrayList<>();
         this.unlimitedBombs = new ArrayList<>();
+        this.lifes = new ArrayList<>();
         this.maxBombs = 1;
     }
 
@@ -236,14 +237,7 @@ public class Arena {
     }
     public void breakWall(BreakableWall wall){
         breakableWalls.remove(wall);
-        if(wall.hasBombUpgrade()){
-            BombUpgrade b = new BombUpgrade(wall.getPosition().getX(),wall.getPosition().getY());
-            bombUpgrades.add(b);
-        }
-        else if(wall.HasUnlimitedBomb()){
-            UnlimitedBombs b = new UnlimitedBombs(wall.getPosition().getX(),wall.getPosition().getY());
-            unlimitedBombs.add(b);
-        }
+
 
     }
 
