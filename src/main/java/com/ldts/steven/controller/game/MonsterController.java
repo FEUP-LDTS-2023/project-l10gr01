@@ -40,10 +40,8 @@ public class MonsterController extends GameController {
         int dx = Integer.compare(target.getX(), current.getX());
         int dy = Integer.compare(target.getY(), current.getY());
 
-        // Move o monstro em direção ao herói, mesmo que esteja longe
         Position nextPosition = new Position(current.getX() + dx, current.getY() + dy);
 
-        // Adiciona movimento aleatório (horizontal ou vertical)
         if (Math.random() < 0.5) {
             dx = (int) Math.signum(Math.random() - 0.5);
             dy = 0;
