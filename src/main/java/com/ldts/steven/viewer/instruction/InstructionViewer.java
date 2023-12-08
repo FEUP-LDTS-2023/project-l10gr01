@@ -22,9 +22,23 @@ public class InstructionViewer extends Viewer<Instruction> {
             String color = "#FFFFFF";
 
             if (i == 8) {
-                color = "#00FF00";
-            } else if (i == 14) {
-                color = "#FFD700";  // Change color for the third line
+                color = "#90FF5D";}
+            else if (i == 9) {
+                color = "#021EAA";
+            }
+            else if (i == 10) {
+                color = "#FFEB48";
+            }else if (i == 11) {
+                color = "#E6D4A2";
+            }
+            else if (i == 12) {
+                color = "#FF6700";
+            }
+            else if (i == 13) {
+                color = "#B026FF";
+            }
+            else if (i == 15) {
+                color = "#FFD700";
             }
 
             gui.drawText(new Position(15, 7 + i), entry, color);
