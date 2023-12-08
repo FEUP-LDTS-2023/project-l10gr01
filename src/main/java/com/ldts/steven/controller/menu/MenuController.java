@@ -4,8 +4,10 @@ import com.ldts.steven.Game;
 import com.ldts.steven.controller.Controller;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.game.arena.LoaderArenaBuilder;
+import com.ldts.steven.model.instruction.Instruction;
 import com.ldts.steven.model.menu.Menu;
 import com.ldts.steven.states.GameState;
+import com.ldts.steven.states.InstructionState;
 
 import java.io.IOException;
 
@@ -27,6 +29,7 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
+                if (getModel().isSelectedInstruction()) game.setState(new InstructionState(new Instruction()));
                 if (getModel().isSelectedStart()) game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
         }
     }
