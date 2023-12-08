@@ -17,10 +17,17 @@ public class InstructionViewer extends Viewer<Instruction> {
     public void drawElements(GUI gui) {
         gui.drawText(new Position(15, 5), "Instructions", "#FFFFFF");
 
-        for (int i = 0; i < getModel().getNumberEntries(); i++)
-            gui.drawText(
-                    new Position(15, 7 + i),
-                    getModel().getEntry(i),
-                    getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
+        for (int i = 0; i < getModel().getNumberEntries(); i++) {
+            String entry = getModel().getEntry(i);
+            String color = "#FFFFFF";
+
+            if (i == 8) {
+                color = "#00FF00";
+            } else if (i == 14) {
+                color = "#FFD700";  // Change color for the third line
+            }
+
+            gui.drawText(new Position(15, 7 + i), entry, color);
+        }
     }
 }

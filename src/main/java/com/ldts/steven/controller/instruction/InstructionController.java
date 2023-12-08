@@ -19,16 +19,7 @@ public class InstructionController extends Controller<Instruction>{
 
     @Override
         public void step(Game game, GUI.ACTION action, long time) throws IOException {
-            switch (action) {
-                case UP:
-                    getModel().previousEntry();
-                    break;
-                case DOWN:
-                    getModel().nextEntry();
-                    break;
-                case SELECT:
-                    if (getModel().isSelectedExit()) game.setState(new MenuState(new Menu()));
-            }
+        if(action== GUI.ACTION.SELECT) game.setState(new MenuState(new Menu()));
         }
 
 
