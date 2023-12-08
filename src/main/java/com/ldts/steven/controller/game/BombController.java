@@ -49,12 +49,12 @@ public class BombController extends GameController{
                 Random random = new Random();
                 int numRandom = random.nextInt(100);
 
-                if(numRandom < 10){
+                if(numRandom < 5){
                     getModel().getUnlimitedBombs().add(new UnlimitedBombs(breakableWall.getPosition().getX(),breakableWall.getPosition().getY()));
 
-                }else if(numRandom < 20){
+                }else if(numRandom < 10){
                     getModel().getLifes().add(new Life(breakableWall.getPosition().getX(),breakableWall.getPosition().getY()));
-                }else if(numRandom < 30){
+                }else if(numRandom < 15){
                     getModel().getBombUpgrades().add(new BombUpgrade(breakableWall.getPosition().getX(),breakableWall.getPosition().getY()));
 
                 }
