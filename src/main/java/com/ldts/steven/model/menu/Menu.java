@@ -5,19 +5,30 @@ import java.util.List;
 
 public class Menu {
     private final List<String> entries;
+    private final List<String> entries2;
     private int currentEntry = 0;
 
     public Menu() {
-        this.entries = Arrays.asList("Start","Instructions" ,"Exit");
+        this.entries2 =Arrays.asList(
+                "Start");
+
+        this.entries = Arrays.asList(
+                "Start",
+                "",
+                "Instructions" ,
+                "",
+                "Exit");
     }
 
     public void nextEntry() {
+        currentEntry++;
         currentEntry++;
         if (currentEntry > this.entries.size() - 1)
             currentEntry = 0;
     }
 
     public void previousEntry() {
+        currentEntry--;
         currentEntry--;
         if (currentEntry < 0)
             currentEntry = this.entries.size() - 1;
@@ -32,10 +43,10 @@ public class Menu {
     }
 
     public boolean isSelectedExit() {
-        return isSelected(2);
+        return isSelected(4);
     }
 
-    public boolean isSelectedInstruction(){ return isSelected(1);}
+    public boolean isSelectedInstruction(){ return isSelected(2);}
     public boolean isSelectedStart() {
         return isSelected(0);
     }

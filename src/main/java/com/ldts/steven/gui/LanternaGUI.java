@@ -102,7 +102,7 @@ public class LanternaGUI implements GUI {
         int x = position.getX();
         int y = position.getY();
 
-        drawCharacter(x, y, 'X', "#FF0000");
+        drawCharacter(x, y, 'X', "#FF6700");
 
     }
 
@@ -111,7 +111,7 @@ public class LanternaGUI implements GUI {
         int x = position.getX();
         int y = position.getY();
 
-        drawCharacter(x, y, 'U', "#00FF00");
+        drawCharacter(x, y, 'U', "#B026FF");
     }
 
     public void drawText(Position position, String text, String color) {
@@ -122,8 +122,11 @@ public class LanternaGUI implements GUI {
 
 
     @Override
-    public void drawMonster(Position position) {
+    public void drawNormalMonster(Position position) {
         drawCharacter(position.getX(), position.getY(), 'M', "#90FF5D");
+    }
+    public void drawFollowerMonster(Position position){
+        drawCharacter(position.getX(), position.getY(), 'M', "#021EAA");
     }
 
     public ACTION getNextAction() throws IOException {
@@ -138,7 +141,6 @@ public class LanternaGUI implements GUI {
         if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
         if(keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == ' ') return ACTION.SPACE;
-
         if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
 
         return ACTION.NONE;
