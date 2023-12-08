@@ -57,7 +57,7 @@ public class MonsterController extends GameController {
             monster.setPosition(position);
             if (getModel().getSteven().getPosition().equals(position))
                 getModel().getSteven().decreaseLifes();
-            if(getModel().isBomb(position)){
+            if(getModel().isBomb(position) || getModel().isBomb(monster.getPosition())){
                 getModel().killMonster(monster.getPosition());
             }
         }
@@ -67,7 +67,7 @@ public class MonsterController extends GameController {
             monster.setPosition(position);
             if (getModel().getSteven().getPosition().equals(position))
                 getModel().getSteven().decreaseLifes();
-            if(getModel().isBomb(position)){
+            if(getModel().isBomb(position) || getModel().isBomb(monster.getPosition())){
                 getModel().killMonster(position);
             }
         }
