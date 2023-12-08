@@ -37,7 +37,7 @@ public class InstructionViewer extends Viewer<Instruction> {
             else if (i == 13) {
                 color = "#B026FF";
             }
-            else if (i == 15) {
+            else if (i == 17) {
                 color = "#FFD700";
             }
 

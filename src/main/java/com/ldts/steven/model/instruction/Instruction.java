@@ -25,6 +25,8 @@ public class Instruction {
                 "X -> Upgraded Bomb",
                 "U -> Unlimited Bomb Upgrade",
                 "",
+                "Note: if you want to stop the game in the middle of the level, press Q.",
+                "",
                 "Exit"
         );
     }
