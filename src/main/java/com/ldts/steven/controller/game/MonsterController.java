@@ -20,13 +20,51 @@ public class MonsterController extends GameController {
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         if (time - lastMovement > 500) {
-            for (Monster monster : getModel().getMonsters())
-                moveMonster(monster, monster.getPosition().getRandomNeighbour());
+            for (Monster monster : getModel().getMonsters()) {
+                if(monster.follower) {
+                    Position stevenPosition = getModel().getSteven().getPosition();
+                    Position monsterPosition = monster.getPosition();
+                    Position nextPosition = getNextPosition(monsterPosition, stevenPosition);
+
+                    moveFollowerMonster(monster, nextPosition);
+                }
+                else{
+                    moveNormalMonster(monster, monster.getPosition().getRandomNeighbour());
+                }
+            }
             this.lastMovement = time;
         }
     }
 
-    private void moveMonster(Monster monster, Position position) {
+    private Position getNextPosition(Position current, Position target) {
+        int dx = Integer.compare(target.getX(), current.getX());
+        int dy = Integer.compare(target.getY(), current.getY());
+
+        // Move o monstro em direção ao herói, mesmo que esteja longe
+        Position nextPosition = new Position(current.getX() + dx, current.getY() + dy);
+
+        // Adiciona movimento aleatório (horizontal ou vertical)
+        if (Math.random() < 0.5) {
+            dx = (int) Math.signum(Math.random() - 0.5);
+            dy = 0;
+        } else {
+            dx = 0;
+            dy = (int) Math.signum(Math.random() - 0.5);
+        }
+
+        return new Position(nextPosition.getX() + dx, nextPosition.getY() + dy);
+    }
+    private void moveFollowerMonster(Monster monster, Position position) {
+        if (getModel().isEmpty(position)) {
+            monster.setPosition(position);
+            if (getModel().getSteven().getPosition().equals(position))
+                getModel().getSteven().decreaseLifes();
+            if(getModel().isBomb(position)){
+                getModel().killMonster(monster.getPosition());
+            }
+        }
+    }
+    private void moveNormalMonster(Monster monster, Position position) {
         if (getModel().isEmpty(position)) {
             monster.setPosition(position);
             if (getModel().getSteven().getPosition().equals(position))
@@ -36,4 +74,5 @@ public class MonsterController extends GameController {
             }
         }
     }
+
 }

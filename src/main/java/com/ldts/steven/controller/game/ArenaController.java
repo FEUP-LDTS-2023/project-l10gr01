@@ -3,9 +3,10 @@ package com.ldts.steven.controller.game;
 import com.ldts.steven.Game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.game.arena.Arena;
-import com.ldts.steven.model.game.elements.Bomb;
 import com.ldts.steven.model.menu.Menu;
+import com.ldts.steven.model.winner.Winner;
 import com.ldts.steven.states.MenuState;
+import com.ldts.steven.states.WinnerState;
 
 import java.io.IOException;
 
@@ -25,6 +26,9 @@ public class ArenaController extends GameController {
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         if (action == GUI.ACTION.QUIT || getModel().getSteven().getLifes() == 0)
             game.setState(new MenuState(new Menu()));
+        else if(getModel().getMonsters().isEmpty()){
+            game.setState(new WinnerState(new Winner()));
+        }
         else {
             heroController.step(game, action, time);
             monsterController.step(game, action, time);

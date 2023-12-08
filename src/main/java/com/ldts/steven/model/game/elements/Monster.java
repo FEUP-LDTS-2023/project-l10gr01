@@ -1,6 +1,7 @@
 package com.ldts.steven.model.game.elements;
 
-public class Monster extends Element{
+public abstract class Monster extends Element{
+    public boolean follower;
     public Monster(int x, int y) {
         super(x, y);
     }

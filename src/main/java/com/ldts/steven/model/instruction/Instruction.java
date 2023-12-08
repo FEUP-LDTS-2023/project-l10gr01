@@ -18,8 +18,8 @@ public class Instruction {
                 "You can choose between 3 different",
                 "levels, each one in increased difficulty.",
                 "Characters: ",
-                "",
-                "M -> Monster",
+                "M -> Normal Monster",
+                "M -> Follower Monster",
                 "S -> Steven",
                 "@ -> Life",
                 "X -> Upgraded Bomb",
@@ -29,17 +29,6 @@ public class Instruction {
         );
     }
 
-    public void nextEntry() {
-        currentEntry++;
-        if (currentEntry > this.entries.size() - 1)
-            currentEntry = 0;
-    }
-
-    public void previousEntry() {
-        currentEntry--;
-        if (currentEntry < 0)
-            currentEntry = this.entries.size() - 1;
-    }
 
     public String getEntry(int i) {
         return entries.get(i);
@@ -47,10 +36,6 @@ public class Instruction {
 
     public boolean isSelected(int i) {
         return currentEntry == i;
-    }
-
-    public boolean isSelectedExit() {
-        return isSelected(15);
     }
 
     public int getNumberEntries() {
