@@ -39,7 +39,6 @@ public class MonsterController extends GameController {
     private Position getNextPosition(Position current, Position target) {
         int dx = Integer.compare(target.getX(), current.getX());
         int dy = Integer.compare(target.getY(), current.getY());
-
         Position nextPosition = new Position(current.getX() + dx, current.getY() + dy);
 
         if (Math.random() < 0.5) {
