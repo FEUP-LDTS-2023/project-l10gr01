@@ -16,12 +16,31 @@ public class WinnerViewer extends Viewer<Winner> {
 
     @Override
     public void drawElements(GUI gui) {
-        gui.drawText(new Position(15, 5), "The result is:", "#FFFFFF");
 
-        for (int i = 0; i < getModel().getNumberEntries(); i++)
-            gui.drawText(
-                    new Position(15, 7 + i),
-                    getModel().getEntry(i),
-                    getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
-    }
-}
+        for (int i = 0; i < getModel().getNumberEntries(); i++) {
+            String entry = getModel().getEntry(i);
+            String color = "#FFFFFF";
+
+            if (i == 2) {
+                color = "#FFFFFF";}
+            else if (i == 3) {
+                color = "#FFFFFF";
+            }
+            else if (i == 4) {
+                color = "#FFFFFF";
+            }else if (i == 5) {
+                color = "#FFFFFF";
+            }
+            else if (i == 6) {
+                color = "#FFFFFF";
+            }
+            else if (i == 7) {
+                color = "#FFFFFF";
+            }
+            else if (i == 11) {
+                color = "#FFD700";
+            }
+
+            gui.drawText(new Position(15, 7 + i), entry, color);
+        }
+}}
