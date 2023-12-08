@@ -3,7 +3,6 @@ package com.ldts.steven.controller.game;
 import com.ldts.steven.Game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.game.arena.Arena;
-import com.ldts.steven.model.game.elements.Bomb;
 import com.ldts.steven.model.menu.Menu;
 import com.ldts.steven.states.MenuState;
 

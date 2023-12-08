@@ -76,13 +76,19 @@ public class LoaderArenaBuilder extends ArenaBuilder {
 
         for (int y = 0; y < lines.size(); y++) {
             String line = lines.get(y);
-            for (int x = 0; x < line.length(); x++)
-                if (line.charAt(x) == 'M') monsters.add(new Monster(x, y));
+            for (int x = 0; x < line.length(); x++) {
+                if (line.charAt(x) == 'M') {
+                    Monster monster = new NormalMonster(x, y);
+                    monsters.add(monster);
+                }
+                if (line.charAt(x) == 'F') {
+                    Monster monster = new FollowerMonster(x, y);
+                    monsters.add(monster);
+                }
+            }
         }
-
         return monsters;
     }
-
     @Override
     protected Steven createSteven() {
         for (int y = 0; y < lines.size(); y++) {
