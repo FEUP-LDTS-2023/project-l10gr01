@@ -33,7 +33,7 @@ public class ArenaController extends GameController {
             game.setState(new EndState(new Winner()));
         }
         //If steven dies, it's game over.
-        else if(getModel().getSteven().getLifes() == 0){
+        else if(getModel().getSteven().getLifes() <= 0){
             game.setState(new EndState(new Loser()));
         }
         else {
