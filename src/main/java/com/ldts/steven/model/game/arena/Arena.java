@@ -89,10 +89,6 @@ public class Arena {
 
     }
 
-    public void setLifes(List<Life> lifes) {
-        this.lifes = lifes;
-    }
-
     public List<BreakableWall> getBreakableWalls() {
         return breakableWalls;
     }
@@ -178,10 +174,8 @@ public class Arena {
         for (Monster currentMonster : monsters) {
             if (!currentMonster.getPosition().equals(position)) {
                 updatedMonsters.add(currentMonster);
-                // Adicione aqui qualquer outra lógica relacionada à eliminação do monstro
             }
         }
-        // Atualize a lista original com a nova lista de monstros
         monsters = updatedMonsters;
     }
 
@@ -194,14 +188,9 @@ public class Arena {
         }
         return false;
     }
-    public boolean isBreakableWall(Position position) {
-        for (BreakableWall breakableWall : breakableWalls) {
-            if(breakableWall.getPosition().equals(position)) return true;
-        }
-        return false;
-    }
     public void addBomb(Bomb bomb) {
 
+        //When a bomb is added its explosion happens in xy axis.
         int x = bomb.getPosition().getX();
         int y = bomb.getPosition().getY();
         int explosionRadius = bomb.getExplosionRadius();

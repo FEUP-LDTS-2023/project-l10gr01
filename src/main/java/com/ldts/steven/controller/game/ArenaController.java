@@ -18,6 +18,7 @@ public class ArenaController extends GameController {
 
     public ArenaController(Arena arena) {
         super(arena);
+        //As soon as arena is built, so are heroes, bombs and monsters.
 
         this.monsterController = new MonsterController(arena);
         this.bombController = new BombController(arena);
@@ -27,9 +28,11 @@ public class ArenaController extends GameController {
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         if (action == GUI.ACTION.QUIT)
             game.setState(new MenuState(new Menu()));
+        //If all monsters are killed. Steven wins! and the game ends.
         else if(getModel().getMonsters().isEmpty()){
             game.setState(new EndState(new Winner()));
         }
+        //If steven dies, it's game over.
         else if(getModel().getSteven().getLifes() == 0){
             game.setState(new EndState(new Loser()));
         }

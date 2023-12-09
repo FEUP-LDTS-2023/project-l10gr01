@@ -31,6 +31,10 @@ public class HeroController extends GameController {
     }
 
     private void moveHero(Position position) {
+        /*Move hero is used to check Steven's location in the arena, several events can happen.
+        Steven can be hurt when in contact with a monster, however he can regain his lost lives with a life upgrade.
+        Also, if steven finds a bomb upgrade he can plant unlimited bombs or\and plant bombs with a bigger radius.
+         */
         if (getModel().isEmpty(position)) {
             getModel().getSteven().setPosition(position);
             if (getModel().isMonster(position) || getModel().isBomb(position)) {

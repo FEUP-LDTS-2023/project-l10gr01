@@ -15,6 +15,7 @@ public class EndController extends Controller<End>{
     }
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
+        //If game ends (win or lose), the player returns to the Menu.
         if(action== GUI.ACTION.SELECT) game.setState(new MenuState(new Menu()));
     }
 

@@ -17,6 +17,7 @@ public class BombController extends GameController{
         hurtSteven = false;
     }
     public void plantBomb(Position position){
+        //Steven can plant two kinds of bombs. Upgraded bombs or normal bombs.
         if(getModel().getSteven().bombUp){
             Bomb bomb = new UpgradedBomb(position.getX(), position.getY());
             getModel().addBomb(bomb);
@@ -33,12 +34,14 @@ public class BombController extends GameController{
     public void step(Game game, GUI.ACTION action, long time) {
         List<Bomb> bombsToRemove = new ArrayList<>();
         List<BreakableWall> wallsToBreak = new ArrayList<>();
+        //When steven plants a bomb, we update its state to set a timer so the event of the explosion can have different states.
         for (Bomb bomb : getModel().getBombs()) {
             bomb.update();
             if(bomb.hasExploded() && getModel().isBomb(getModel().getSteven().getPosition()) && !hurtSteven) {
                 getModel().getSteven().decreaseLifes();
                 hurtSteven = true;
             }
+            //The bomb can break certain types of walls, if the wall is in its radius.
             if(bomb.hasExploded()){
                 for(BreakableWall breakableWall : getModel().getBreakableWalls()){
                     if(getModel().isBomb(breakableWall.getPosition())) wallsToBreak.add(breakableWall);
@@ -47,6 +50,7 @@ public class BombController extends GameController{
             for(BreakableWall breakableWall : wallsToBreak){
                 getModel().breakWall(breakableWall);
                 Random random = new Random();
+                //When a wall is broken, it has 5% chance of having an upgrade.
                 int numRandom = random.nextInt(100);
 
                 if(numRandom < 5){

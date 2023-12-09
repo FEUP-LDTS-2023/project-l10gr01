@@ -19,6 +19,7 @@ public class MonsterController extends GameController {
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
+        //The movement of the monster will be defined by his type. Monsters can either move randomly or can follow Steven.
         if (time - lastMovement > 500) {
             for (Monster monster : getModel().getMonsters()) {
                 if(monster.follower) {
