@@ -15,6 +15,8 @@ public class SelectLevel {
                 "",
                 "LEVEL 2" ,
                 "",
+                "LEVEL 3",
+                "",
                 "Exit");
     }
 
@@ -41,14 +43,16 @@ public class SelectLevel {
     }
 
     public boolean isSelectedExit() {
-        return isSelected(4);
+        return isSelected(6);
     }
 
     public boolean isSelectedLevelOne(){ return isSelected(0);}
     public boolean isSelectedLevelTwo() {
         return isSelected(2);
     }
-
+    public boolean isSelectedLevelThree() {
+        return isSelected(4);
+    }
     public int getNumberEntries() {
         return this.entries.size();
     }

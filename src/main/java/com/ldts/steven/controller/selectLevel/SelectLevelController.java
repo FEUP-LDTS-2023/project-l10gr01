@@ -31,6 +31,7 @@ public class SelectLevelController extends Controller<SelectLevel> {
                 if (getModel().isSelectedExit()) game.setState(null);
                 if (getModel().isSelectedLevelOne()) game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
                 if (getModel().isSelectedLevelTwo()) game.setState(new GameState(new LoaderArenaBuilder(2).createArena()));
+                if (getModel().isSelectedLevelThree()) game.setState(new GameState(new LoaderArenaBuilder(3).createArena()));
 
         }
     }
