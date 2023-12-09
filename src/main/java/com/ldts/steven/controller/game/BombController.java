@@ -26,6 +26,7 @@ public class BombController extends GameController{
             Bomb bomb = new NormalBomb(position.getX(), position.getY());
             getModel().addBomb(bomb);
         }
+        hurtSteven = false;
     }
     public void setHurtSteven(boolean flag){
         this.hurtSteven=flag;

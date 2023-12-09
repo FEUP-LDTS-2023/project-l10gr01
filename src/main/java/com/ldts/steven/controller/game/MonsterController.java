@@ -35,6 +35,9 @@ public class MonsterController extends GameController {
             }
             this.lastMovement = time;
         }
+        for(Monster m : getModel().getMonsters()){
+            if(getModel().isBomb(m.getPosition())) getModel().killMonster(m.getPosition());
+        }
     }
 
     private Position getNextPosition(Position current, Position target) {
