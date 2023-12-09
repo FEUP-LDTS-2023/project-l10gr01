@@ -1,4 +1,4 @@
-package com.ldts.steven.controller.menu;
+package com.ldts.steven.controller.selectLevel;
 
 import com.ldts.steven.Game;
 import com.ldts.steven.controller.Controller;
@@ -9,15 +9,13 @@ import com.ldts.steven.model.menu.Menu;
 import com.ldts.steven.model.selectLevel.SelectLevel;
 import com.ldts.steven.states.GameState;
 import com.ldts.steven.states.InstructionState;
-import com.ldts.steven.states.SelectLevelState;
 
 import java.io.IOException;
 
-import static com.ldts.steven.gui.GUI.ACTION.*;
+public class SelectLevelController extends Controller<SelectLevel> {
 
-public class MenuController extends Controller<Menu> {
-    public MenuController(Menu menu) {
-        super(menu);
+    public SelectLevelController(SelectLevel selectLevel) {
+        super(selectLevel);
     }
 
     @Override
@@ -31,8 +29,10 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedInstruction()) game.setState(new InstructionState(new Instruction()));
-                if (getModel().isSelectedStart()) game.setState(new SelectLevelState(new SelectLevel()));
+                if (getModel().isSelectedLevelOne()) game.setState(new GameState(new LoaderArenaBuilder(1).createArena()));
+                if (getModel().isSelectedLevelTwo()) game.setState(new GameState(new LoaderArenaBuilder(2).createArena()));
+
         }
     }
+
 }
