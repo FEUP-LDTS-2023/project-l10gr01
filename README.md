@@ -8,11 +8,19 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 
 ### IMPLEMENTED FEATURES
 
-> This far only the model and the view of the game are implemented. More will come with upcoming commits!
+-> **Connected Menus** : In order to play the user can go through different menus. Starting at the main menu and optionally going to the Instructions menu, or selecting 'Play' and going to the Select Level menu.
 
-### PLANNED FEATURES
+-> **Player control** : The player may move and deploy bombs with the keyboard buttons.
+
+-> **Collisions detection** : Collisions between the elements of the game are constantly checked during play time. Elements such as monsters and Steven cannot transverse walls. However, bombs can be used to break breakable walls.
+
+- **Different levels** : 3 different levels with an increasing difficulty were implemented, the user can choose the level that they want to play.
 
 -> **Monsters** : In this game Steven Universe is faced with different enemies. In each difficulty level, a monster will be presented and copies of him will be placed in the maze. A monster's objectivity is to catch Steven and damage him, making him lose his lifes. 
+
+-> **Follower Monsters** : A type of monster that is presented in the harder levels. This monster is intelligent enough to follow Steven throughout the map. 
+
+-> **Breakable Walls** : In each level, a different set of breakable walls is presetend in the game map. If a explosion radius of a bomb collides with this type of wall, it will break. Once broken, the user can 
 
 -> **Deploy Bombs** : Steven (our steven) is able to deploy gem bombs. These bombs can destroy certain wall types and kill monsters. This is a default feature, which means that steven will always have this ability, however after deploying a bombing Steven has to recharge in order to deploy another one.
 
@@ -22,29 +30,9 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 
 -> **Unlimited Bombs Upgrade** : by finding this bomb upgrade, Steven will be able to temporarily deploy an unlimited amount of bombs, without waiting his power to recharge.
 
-**MENU**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/1%20(1).png)
+## Planned Features
 
-**LEVEL 1**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/2%20(1).png)
-
-**LEVEL 1 (BOMB EXPLOSION)**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/3%20(1).png)
-
-**LEVEL 1 (ALL UPGRADES)**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/4%20(1).png)
-
-**LEVEL 2**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/5%20(1).png)
-
-**LEVEL 2 (UNLIMITED BOMBS UPGRADE)**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/6%20(2).png)
-
-**LEVEL 3**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/7%20(1).png)
-
-**LEVEL 3 (10X BOMB UPGRADE)**
-![Menu](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/8%20(1).png)
+All the planned features were successfully implemented.
 
 ### DESIGN
 
