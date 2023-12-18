@@ -1,6 +1,5 @@
 package com.ldts.steven;
 
-import com.ldts.steven.Game;
 import com.ldts.steven.controller.game.ArenaController;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.end.Loser;
@@ -36,7 +35,6 @@ public class ArenaControllerTest {
     }
     @Test
     void testWinGame() throws IOException {
-        // Configurar o estado da Arena para não ter monstros
         when(arenaConMock.getModel().getMonsters()).thenReturn(Collections.emptyList());
 
         arenaConMock.step(gameMock, GUI.ACTION.NONE, 0);
@@ -48,9 +46,7 @@ public class ArenaControllerTest {
     }
     @Test
     void testLoseGame() throws IOException {
-        // Configurar o estado da Arena para ter monstros
         when(arenaConMock.getModel().getMonsters()).thenReturn(Collections.singletonList(mock(Monster.class)));
-        // Configurar o estado de Steven para ter 0 vidas
         when(arenaConMock.getModel().getSteven()).thenReturn(mock(Steven.class));
         when(arenaConMock.getModel().getSteven().getLifes()).thenReturn(0);
 

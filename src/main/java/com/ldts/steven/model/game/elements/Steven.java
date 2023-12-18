@@ -21,6 +21,7 @@ public class Steven extends Element{
     public void decreaseLifes() {
         this.lifes--;
     }
+    public boolean getBombUp() {return bombUp;}
 
     public int getLifes() {
         return lifes;
