@@ -65,6 +65,15 @@ public class HeroController extends GameController {
             Position heroPosition = getModel().getSteven().getPosition();
             bombController.plantBomb(heroPosition);
         }
+        if(getModel().unlimitedUp && getModel().getSteven().bombUp){
+            if(getModel().unlimitedUpTime>getModel().getSteven().getBombUpTime){
+                getModel().getSteven().setColor("#1FC1DB");
+            }
+            else getModel().getSteven().setColor("#FF6700");
+        }
+        else if(getModel().unlimitedUp) getModel().getSteven().setColor("#1FC1DB");
+        else if(getModel().getSteven().bombUp) getModel().getSteven().setColor("#FF6700");
+        else getModel().getSteven().setColor("#FFEB48");
         getModel().getSteven().stopBombUp(System.currentTimeMillis());
         getModel().checkUnlimitedUp(System.currentTimeMillis());
     }

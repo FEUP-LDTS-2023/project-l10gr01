@@ -31,7 +31,12 @@ public class GameViewer extends Viewer<Arena> {
         if(!getModel().getLifes().isEmpty()){
             drawElements(gui,getModel().getLifes(), new LifeViewer());
         }
-
+        if(getModel().getSteven().bombUp){
+            gui.drawText(new Position(13, 0), "Bomb Upgrade", "#FF6700");
+        }
+        if(getModel().unlimitedUp){
+            gui.drawText(new Position(31, 0), "Unlimited Bombs", "#1FC1DB");
+        }
         gui.drawText(new Position(0, 0), "LIFES: " + getModel().getSteven().getLifes(), "#FFD700");
     }
 

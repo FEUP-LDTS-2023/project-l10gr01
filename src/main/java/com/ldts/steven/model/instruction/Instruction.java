@@ -6,7 +6,6 @@ import java.util.List;
 public class Instruction {
 
     private final List<String> entries;
-    private int currentEntry = 0;
 
     public Instruction() {
         this.entries = Arrays.asList(
@@ -36,9 +35,6 @@ public class Instruction {
         return entries.get(i);
     }
 
-    public boolean isSelected(int i) {
-        return currentEntry == i;
-    }
 
     public int getNumberEntries() {
         return this.entries.size();

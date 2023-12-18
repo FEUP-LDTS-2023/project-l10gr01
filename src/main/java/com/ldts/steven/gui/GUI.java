@@ -6,7 +6,7 @@ import com.ldts.steven.model.game.elements.UnlimitedBombs;
 
 import java.io.IOException;
 public interface GUI {
-    void drawHero(Position position);
+    void drawHero(Position position, String color);
 
     void drawWall(Position position);
 
