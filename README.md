@@ -1,4 +1,4 @@
-# LDTS<10><G01> - UNIVERSE BOMB
+# LDTS <10><01> - UNIVERSE BOMB
 
 ## Game Description
 
