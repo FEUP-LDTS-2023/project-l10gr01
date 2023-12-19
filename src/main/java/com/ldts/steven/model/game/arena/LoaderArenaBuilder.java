@@ -1,5 +1,6 @@
 package com.ldts.steven.model.game.arena;
 
+
 import com.ldts.steven.model.game.elements.*;
 
 import java.io.BufferedReader;
@@ -9,7 +10,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class LoaderArenaBuilder extends ArenaBuilder {
+
     private final List<String> lines;
 
     public LoaderArenaBuilder(int level) throws IOException {

@@ -3,7 +3,6 @@ package com.ldts.steven;
 import com.ldts.steven.gui.LanternaGUI;
 import com.ldts.steven.states.MenuState;
 import com.ldts.steven.states.State;
-
 import com.ldts.steven.model.menu.Menu;
 import java.awt.*;
 import java.io.IOException;

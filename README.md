@@ -1,4 +1,4 @@
-# LDTS_<10><GRUPO 01> - Universe Bomb
+# LDTS <10><01> - UNIVERSE BOMB
 
 ## Game Description
 

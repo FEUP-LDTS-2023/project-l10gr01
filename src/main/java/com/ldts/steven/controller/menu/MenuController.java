@@ -11,7 +11,6 @@ import com.ldts.steven.states.SelectLevelState;
 
 import java.io.IOException;
 
-
 public class MenuController extends Controller<Menu> {
     public MenuController(Menu menu) {
         super(menu);
