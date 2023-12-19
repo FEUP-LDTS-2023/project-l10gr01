@@ -1,3 +1,5 @@
+package com.ldts.steven.model;
+
 import com.ldts.steven.model.Position;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

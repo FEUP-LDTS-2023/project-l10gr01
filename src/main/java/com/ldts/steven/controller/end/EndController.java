@@ -18,6 +18,4 @@ public class EndController extends Controller<End>{
         //If game ends (win or lose), the player returns to the Menu.
         if(action== GUI.ACTION.SELECT) game.setState(new MenuState(new Menu()));
     }
-
-
 }

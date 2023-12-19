@@ -1,6 +1,6 @@
-package com.ldts.steven;
+package com.ldts.steven.controller.game;
 
-import com.ldts.steven.controller.game.ArenaController;
+import com.ldts.steven.Game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.end.Loser;
 import com.ldts.steven.model.end.Winner;

@@ -1,7 +1,7 @@
-package com.ldts.steven;
+package com.ldts.steven.controller.game;
 
 
-import com.ldts.steven.controller.game.BombController;
+import com.ldts.steven.Game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
@@ -11,11 +11,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import java.util.Random;
-import java.util.Collections;
+
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class BombControllerTest {
