@@ -16,9 +16,12 @@ public class BombController extends GameController{
         super(arena);
         hurtSteven = false;
     }
+    public boolean getHurtSteven(){
+        return hurtSteven;
+    }
     public void plantBomb(Position position){
         //Steven can plant two kinds of bombs. Upgraded bombs or normal bombs.
-        if(getModel().getSteven().bombUp){
+        if(getModel().getSteven().getBombUp()){
             Bomb bomb = new UpgradedBomb(position.getX(), position.getY());
             getModel().addBomb(bomb);
     }
@@ -26,7 +29,7 @@ public class BombController extends GameController{
             Bomb bomb = new NormalBomb(position.getX(), position.getY());
             getModel().addBomb(bomb);
         }
-        hurtSteven = false;
+        setHurtSteven(true);
     }
     public void setHurtSteven(boolean flag){
         this.hurtSteven=flag;

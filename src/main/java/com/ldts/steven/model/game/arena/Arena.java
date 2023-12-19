@@ -194,6 +194,7 @@ public class Arena {
         int x = bomb.getPosition().getX();
         int y = bomb.getPosition().getY();
         int explosionRadius = bomb.getExplosionRadius();
+
         for(int i=x; i <= x+explosionRadius; i++){
             Position aux = new Position(i, y);
             if(isWall(aux)) break;
@@ -216,6 +217,9 @@ public class Arena {
         }
         if(bombs.size() < maxBombs)
             bombs.add(bomb);
+    }
+    public int getMaxBombs(){
+        return maxBombs;
     }
     public void breakWall(BreakableWall wall){
         breakableWalls.remove(wall);

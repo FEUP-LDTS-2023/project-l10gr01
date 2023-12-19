@@ -5,4 +5,8 @@ public abstract class Monster extends Element{
     public Monster(int x, int y) {
         super(x, y);
     }
+
+    public boolean isFollower(){
+        return follower;
+    }
 }

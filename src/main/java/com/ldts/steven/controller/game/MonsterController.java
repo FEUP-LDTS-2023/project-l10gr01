@@ -22,7 +22,7 @@ public class MonsterController extends GameController {
         //The movement of the monster will be defined by his type. Monsters can either move randomly or can follow Steven.
         if (time - lastMovement > 500) {
             for (Monster monster : getModel().getMonsters()) {
-                if(monster.follower) {
+                if(monster.isFollower()) {
                     Position stevenPosition = getModel().getSteven().getPosition();
                     Position monsterPosition = monster.getPosition();
                     Position nextPosition = getNextPosition(monsterPosition, stevenPosition);
@@ -40,7 +40,7 @@ public class MonsterController extends GameController {
         }
     }
 
-    private Position getNextPosition(Position current, Position target) {
+    public Position getNextPosition(Position current, Position target) {
         int dx = Integer.compare(target.getX(), current.getX());
         int dy = Integer.compare(target.getY(), current.getY());
         Position nextPosition = new Position(current.getX() + dx, current.getY() + dy);
@@ -55,7 +55,7 @@ public class MonsterController extends GameController {
 
         return new Position(nextPosition.getX() + dx, nextPosition.getY() + dy);
     }
-    private void moveFollowerMonster(Monster monster, Position position) {
+    public void moveFollowerMonster(Monster monster, Position position) {
         if (getModel().isEmpty(position)) {
             monster.setPosition(position);
             if (getModel().getSteven().getPosition().equals(position))
@@ -65,7 +65,7 @@ public class MonsterController extends GameController {
             }
         }
     }
-    private void moveNormalMonster(Monster monster, Position position) {
+    public void moveNormalMonster(Monster monster, Position position) {
         if (getModel().isEmpty(position)) {
             monster.setPosition(position);
             if (getModel().getSteven().getPosition().equals(position))

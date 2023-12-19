@@ -1,3 +1,5 @@
+package com.ldts.steven.model;
+
 import com.ldts.steven.model.game.arena.Arena;
 import com.ldts.steven.model.game.elements.BreakableWall;
 import com.ldts.steven.model.game.elements.Monster;

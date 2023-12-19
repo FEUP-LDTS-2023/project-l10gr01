@@ -1,8 +1,10 @@
+package com.ldts.steven.model;
+
 import com.ldts.steven.model.Position;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TestPosition {
+public class PositionTest {
     @Test
     public void testGetPosition(){
         Position position = new Position(10,10);
