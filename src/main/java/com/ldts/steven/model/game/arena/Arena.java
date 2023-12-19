@@ -14,13 +14,13 @@ public class Arena {
     private List<BreakableWall> breakableWalls;
     public long unlimitedUpTime;
     public boolean unlimitedUp;
-    private List<Life> lifes;
-    private List<Bomb> bombs;
+    private final List<Life> lifes;
+    private final List<Bomb> bombs;
     private int maxBombs;
 
-    private List<BombUpgrade> bombUpgrades;
+    private final List<BombUpgrade> bombUpgrades;
 
-    private List<UnlimitedBombs> unlimitedBombs;
+    private final List<UnlimitedBombs> unlimitedBombs;
 
     public Arena(int width, int height) {
         this.height = height;

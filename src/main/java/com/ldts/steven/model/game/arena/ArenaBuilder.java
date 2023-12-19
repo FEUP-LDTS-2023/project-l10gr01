@@ -1,6 +1,4 @@
 package com.ldts.steven.model.game.arena;
-
-import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.elements.*;
 
 import java.util.List;

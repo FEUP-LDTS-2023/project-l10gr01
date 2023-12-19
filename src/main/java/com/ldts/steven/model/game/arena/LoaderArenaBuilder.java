@@ -1,6 +1,5 @@
 package com.ldts.steven.model.game.arena;
 
-import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.elements.*;
 
 import java.io.BufferedReader;
@@ -9,16 +8,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class LoaderArenaBuilder extends ArenaBuilder {
-    private final int level;
     private final List<String> lines;
 
     public LoaderArenaBuilder(int level) throws IOException {
-        this.level = level;
-
         URL resource = LoaderArenaBuilder.class.getResource("/levels/level" + level + ".lvl");
-        BufferedReader br = new BufferedReader(new FileReader(resource.getFile()));
+        BufferedReader br = new BufferedReader(new FileReader(Objects.requireNonNull(resource).getFile()));
 
         lines = readLines(br);
     }

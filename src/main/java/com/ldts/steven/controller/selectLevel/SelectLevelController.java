@@ -4,12 +4,8 @@ import com.ldts.steven.Game;
 import com.ldts.steven.controller.Controller;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.game.arena.LoaderArenaBuilder;
-import com.ldts.steven.model.instruction.Instruction;
-import com.ldts.steven.model.menu.Menu;
 import com.ldts.steven.model.selectLevel.SelectLevel;
 import com.ldts.steven.states.GameState;
-import com.ldts.steven.states.InstructionState;
-
 import java.io.IOException;
 
 public class SelectLevelController extends Controller<SelectLevel> {

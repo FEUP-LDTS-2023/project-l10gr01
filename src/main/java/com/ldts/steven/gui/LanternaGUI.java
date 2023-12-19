@@ -17,12 +17,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Objects;
 
 public class LanternaGUI implements GUI {
-    private Screen screen;
-    public LanternaGUI(Screen screen) {
-        this.screen = screen;
-    }
+    private final Screen screen;
 
     public LanternaGUI(int width, int height) throws IOException, FontFormatException, URISyntaxException {
         AWTTerminalFontConfiguration fontConfig = loadSquareFont();
@@ -32,7 +30,7 @@ public class LanternaGUI implements GUI {
     }
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
         URL resource = getClass().getClassLoader().getResource("fonts/PixelCode.otf");
-        File fontFile = new File(resource.toURI());
+        File fontFile = new File(Objects.requireNonNull(resource).toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
