@@ -1,4 +1,4 @@
-# LDTS_T06_G01 - OVERKILL
+# LDTS_<10><GRUPO 01> - Universe Bomb
 
 ## Game Description
 

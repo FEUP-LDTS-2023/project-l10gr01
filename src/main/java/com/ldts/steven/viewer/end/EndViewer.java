@@ -3,7 +3,6 @@ package com.ldts.steven.viewer.end;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.end.End;
-import com.ldts.steven.model.end.Winner;
 import com.ldts.steven.viewer.Viewer;
 
 public class EndViewer extends Viewer<End> {

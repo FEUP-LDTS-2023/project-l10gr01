@@ -6,9 +6,8 @@ import java.util.Vector;
 
 public abstract class Bomb extends Element {
 
-    private boolean exploded;
-    private long plantTime;
-    private boolean disappear;
+    private final boolean exploded;
+    private final boolean disappear;
     protected int explosionRadius;
     public Vector<Position> canBombExplode;
 

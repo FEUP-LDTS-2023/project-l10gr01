@@ -19,10 +19,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class LanternaGUI implements GUI {
-    private Screen screen;
-    public LanternaGUI(Screen screen) {
-        this.screen = screen;
-    }
+    private final Screen screen;
 
     public LanternaGUI(int width, int height) throws IOException, FontFormatException, URISyntaxException {
         AWTTerminalFontConfiguration fontConfig = loadSquareFont();
@@ -39,8 +36,7 @@ public class LanternaGUI implements GUI {
         ge.registerFont(font);
 
         Font loadedFont = font.deriveFont(Font.PLAIN, 25);
-        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
-        return fontConfig;
+         return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
     private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {
         TerminalSize terminalSize = new TerminalSize(width, height + 1);
@@ -48,8 +44,7 @@ public class LanternaGUI implements GUI {
                 .setInitialTerminalSize(terminalSize);
         terminalFactory.setForceAWTOverSwing(true);
         terminalFactory.setTerminalEmulatorFontConfiguration(fontConfig);
-        Terminal terminal = terminalFactory.createTerminal();
-        return terminal;
+        return terminalFactory.createTerminal();
     }
     private Screen createScreen(Terminal terminal) throws IOException {
         final Screen screen;

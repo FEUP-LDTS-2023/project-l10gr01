@@ -5,12 +5,9 @@ import java.util.List;
 
 public class Menu {
     private final List<String> entries;
-    private final List<String> entries2;
     private int currentEntry = 0;
 
     public Menu() {
-        this.entries2 =Arrays.asList(
-                "Start");
 
         this.entries = Arrays.asList(
                 "Start",

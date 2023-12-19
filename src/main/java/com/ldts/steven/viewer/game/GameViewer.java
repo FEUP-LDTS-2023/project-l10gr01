@@ -4,9 +4,7 @@ package com.ldts.steven.viewer.game;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.game.arena.Arena;
-import com.ldts.steven.model.game.elements.Bomb;
 import com.ldts.steven.model.game.elements.Element;
-import com.ldts.steven.model.game.elements.Life;
 import com.ldts.steven.viewer.Viewer;
 
 import java.util.List;

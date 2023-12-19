@@ -1,9 +1,6 @@
 package com.ldts.steven;
 
 import com.ldts.steven.gui.LanternaGUI;
-import com.ldts.steven.model.game.arena.Arena;
-import com.ldts.steven.model.game.arena.LoaderArenaBuilder;
-import com.ldts.steven.states.GameState;
 import com.ldts.steven.states.MenuState;
 import com.ldts.steven.states.State;
 
@@ -11,7 +8,7 @@ import com.ldts.steven.model.menu.Menu;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Scanner;
+
 
 public class Game {
 
@@ -53,6 +50,7 @@ public class Game {
             try {
                 if (sleepTime > 0) Thread.sleep(sleepTime);
             } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
 

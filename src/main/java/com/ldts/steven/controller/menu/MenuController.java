@@ -3,17 +3,14 @@ package com.ldts.steven.controller.menu;
 import com.ldts.steven.Game;
 import com.ldts.steven.controller.Controller;
 import com.ldts.steven.gui.GUI;
-import com.ldts.steven.model.game.arena.LoaderArenaBuilder;
 import com.ldts.steven.model.instruction.Instruction;
 import com.ldts.steven.model.menu.Menu;
 import com.ldts.steven.model.selectLevel.SelectLevel;
-import com.ldts.steven.states.GameState;
 import com.ldts.steven.states.InstructionState;
 import com.ldts.steven.states.SelectLevelState;
 
 import java.io.IOException;
 
-import static com.ldts.steven.gui.GUI.ACTION.*;
 
 public class MenuController extends Controller<Menu> {
     public MenuController(Menu menu) {

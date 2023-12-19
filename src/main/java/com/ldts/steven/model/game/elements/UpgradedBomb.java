@@ -7,7 +7,7 @@ import java.util.Vector;
 public class UpgradedBomb extends Bomb {
     private boolean exploded;
     protected int explosionRadius;
-    private long plantTime;
+    private final long plantTime;
     private boolean disappear;
     public Vector<Position> canBombExplode;
 
@@ -17,7 +17,7 @@ public class UpgradedBomb extends Bomb {
         this.explosionRadius = 5;
         this.plantTime = System.currentTimeMillis();
         this.canBombExplode = new Vector<>();
-    };
+    }
 
     @Override
     public void explode() {

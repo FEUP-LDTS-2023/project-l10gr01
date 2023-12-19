@@ -3,7 +3,6 @@ package com.ldts.steven.viewer.instruction;
 import com.ldts.steven.gui.GUI;
 import com.ldts.steven.model.Position;
 import com.ldts.steven.model.instruction.Instruction;
-import com.ldts.steven.model.menu.Menu;
 import com.ldts.steven.viewer.Viewer;
 
 public class InstructionViewer extends Viewer<Instruction> {
