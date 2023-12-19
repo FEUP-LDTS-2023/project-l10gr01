@@ -14,7 +14,7 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 
 -> **Collisions detection** : Collisions between the elements of the game are constantly checked during play time. Elements such as monsters and Steven cannot transverse walls. However, bombs can be used to break breakable walls.
 
-- **Different levels** : 3 different levels with an increasing difficulty were implemented, the user can choose the level that they want to play.
+-> **Different levels** : 3 different levels with an increasing difficulty were implemented, the user can choose the level that they want to play.
 
 -> **Monsters** : In this game Steven Universe is faced with different enemies. In each difficulty level, a monster will be presented and copies of him will be placed in the maze. A monster's objectivity is to catch Steven and damage him, making him lose his lifes. 
 
@@ -34,9 +34,9 @@ This project was developed by Leonardo Garcia (up202200041@up.pt), Marcel Medeir
 
 All the planned features were successfully implemented.
 
-### DESIGN
+#### DESIGN
 
-#### THE SCREEN STATE ####
+### THE SCREEN STATE ####
 
 In our game, Lanterna will be responsible to print different screens depending on the user's input. For example, once the game starts, the Menu screen will appear, after they press start the Game screen will appear. Looking at this, it's very clear that a **State Pattern** would be necessary, defining in which state the game is running, and each state is responsible for creating its viewer.
 
@@ -57,12 +57,12 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 
 -> Ensures the **Single Responsibility Principle**
 
-#### Known-Code Smells
+## Known-Code Smells
 
-## Magic Numbers
+#### Magic Numbers
 -> Identified in the Game class, when setting the FPS value. As well as in all the classes that extend the Viewer class, most specifically in the drawElements function. 
 
-## Duplicate Code
+#### Duplicate Code
 -> The EndViewer class uses the same logic to color the end state twice. In the case that the player wins and in the case that the player loses. Both times the same logic is duplicated, the only thing that changes is the color value.
 
 -> The Arena class has duplicated code in the addBomb function. Four for loops are used to propagate the damage of the bomb to a xy axis. 
