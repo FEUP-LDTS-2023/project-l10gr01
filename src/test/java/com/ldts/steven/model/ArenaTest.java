@@ -95,6 +95,7 @@ public class ArenaTest {
 
         assertTrue(arena.isEmpty(emptyPosition));
         assertFalse(arena.isEmpty(nonEmptyPosition));
+        assertFalse(arena.isEmpty(nonEmptyPosition));
     }
     @Test
     public void testIsMonster() {
