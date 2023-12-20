@@ -108,12 +108,12 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 
 -> Ensures the **Single Responsibility Principle**
 
-#### Known-Code Smells
+## Known-Code Smells
 
-## Magic Numbers
+#### Magic Numbers
 -> Identified in the Game class, when setting the FPS value. As well as in all the classes that extend the Viewer class, most specifically in the drawElements function. 
 
-## Duplicate Code
+#### Duplicate Code
 -> The EndViewer class uses the same logic to color the end state twice. In the case that the player wins and in the case that the player loses. Both times the same logic is duplicated, the only thing that changes is the color value.
 
 -> The Arena class has duplicated code in the addBomb function. Four for loops are used to propagate the damage of the bomb to a xy axis. 
