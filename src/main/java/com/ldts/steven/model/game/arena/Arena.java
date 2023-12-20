@@ -30,6 +30,7 @@ public class Arena {
         this.unlimitedBombs = new ArrayList<>();
         this.lifes = new ArrayList<>();
         this.maxBombs = 1;
+        this.walls = new ArrayList<>();
     }
 
 
@@ -221,8 +222,6 @@ public class Arena {
     }
     public void breakWall(BreakableWall wall){
         breakableWalls.remove(wall);
-
-
     }
 
     public List<BombUpgrade> getBombUpgrades() {

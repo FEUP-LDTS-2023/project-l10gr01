@@ -7,7 +7,7 @@ import java.util.Vector;
 public class NormalBomb extends Bomb {
     private boolean exploded;
     protected int explosionRadius;
-    private final long plantTime;
+    public long plantTime;
     private boolean disappear;
     public Vector<Position> canBombExplode;
 

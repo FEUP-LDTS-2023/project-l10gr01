@@ -202,4 +202,45 @@ public class ArenaTest {
 
         assertFalse(arena.getMonsters().isEmpty());
     }
+    @Test
+    public void testAddBomb() {
+        Arena arena = new Arena(15,20);
+        Bomb bombMock = mock(Bomb.class);
+        Wall wallMock = mock(Wall.class);
+
+        Position bombPosition = new Position(1, 1);
+        Position wallPosition = new Position(2, 1);
+
+        List<Bomb> bombs = new ArrayList<>();
+        List<Wall> walls = new ArrayList<>();
+
+        walls.add(wallMock);
+
+        arena.setBombs(bombs);
+
+        when(wallMock.getPosition()).thenReturn(wallPosition);
+        when(bombMock.getPosition()).thenReturn(bombPosition);
+
+        arena.addBomb(bombMock);
+
+        assertEquals(1, arena.getBombs().size());
+
+    }
+    @Test
+    public void testUnlimitedUp() {
+        Arena arena = new Arena(15,20);
+        assertFalse(arena.unlimitedUp);
+
+        arena.setUnlimitedUp(true);
+        assertTrue(arena.unlimitedUp);
+        assertEquals(1000, arena.getMaxBombs());
+
+        arena.checkUnlimitedUp(System.currentTimeMillis() + 10000);
+        assertTrue(arena.unlimitedUp);
+        assertEquals(1000, arena.getMaxBombs());
+
+        arena.checkUnlimitedUp(System.currentTimeMillis() + 20000);
+        assertFalse(arena.unlimitedUp);
+        assertEquals(1, arena.getMaxBombs());
+    }
 }
