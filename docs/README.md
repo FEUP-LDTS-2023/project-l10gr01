@@ -36,6 +36,51 @@ All the planned features were successfully implemented.
 
 #### DESIGN
 
+#### GENERAL STRUCTURE
+#### PROBLEM IN CONTEXT:
+The general structure of this game consists in a GUI and some different gameStates. To deal with this, we had to apply some patterns.
+
+#### THE PATTERN:
+In order to solve the problem above, the first pattern applied was the **Architectural Pattern**, we implemented de **MVC** (Model-View-Controller) design pattern that is divided in three parts: 
+**Model**: Stores all the data structure of the game.
+**View**: The view is responsible for presenting and rendering graphical elements in the user interface based on the state of the underlying model.
+**Controller**: Controllers processes the changes and control the rules of the game.
+
+The second state applied was the **State Pattern**, a behavioral design pattern that enables an object to alter its behavior when its internal state changes
+
+#### THE IMLPEMENTATION:
+COLOCAR IMAGEM(S)
+
+#### CONSEQUENCES:
+- The various states, indicative of different menus, are clearly defined in the code.
+- The code is well-organized
+- Each component has a clearly defined and focused responsibility.
+
+
+#### THE GAME
+#### PROBLEM CONTEXT:
+Our game only have one instance, so we could use a design pattern for this.
+
+#### THE PATTERN:
+In our Game class, we used the **Singleton Pattern**. The Singleton Pattern has been employed to ensure that there is only a single instance of the class within the entire application.
+
+#### CONSEQUENCES:
+- The Game instance is globally accessible throughout the application
+- We avoid unnecessary resource consumption that might occur with multiple instances.
+- Maintain a consistent state across the application
+
+#### TYPES OF MONSTERS AND BOMBS
+#### PROBLEM CONTEXT:
+Our game have two different types of monsters (Follower and Normal) and two types of Bombs (Upgraded and Normal).
+
+#### THE PATTERN:
+In order to solve this problem, the pattern implemented was the **Template Pattern**. We created an abstract class to Monster and two subclasses with the concrete implementations. We did the same to bombs.
+
+#### CONSEQUENCES:
+- Code reuse
+- Subclasses can customize certain aspects without changing its overall structure.
+
+
 ### THE SCREEN STATE ####
 
 In our game, Lanterna will be responsible to print different screens depending on the user's input. For example, once the game starts, the Menu screen will appear, after they press start the Game screen will appear. Looking at this, it's very clear that a **State Pattern** would be necessary, defining in which state the game is running, and each state is responsible for creating its viewer.

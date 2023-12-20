@@ -5,5 +5,4 @@ public class FollowerMonster extends Monster {
         super(x, y);
         super.follower=true;
     }
-
 }
