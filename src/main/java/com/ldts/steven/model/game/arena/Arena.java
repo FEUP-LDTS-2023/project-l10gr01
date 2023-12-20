@@ -14,13 +14,13 @@ public class Arena {
     private List<BreakableWall> breakableWalls;
     public long unlimitedUpTime;
     public boolean unlimitedUp;
-    private final List<Life> lifes;
-    private final List<Bomb> bombs;
+    private List<Life> lifes;
+    private List<Bomb> bombs;
     private int maxBombs;
 
-    private final List<BombUpgrade> bombUpgrades;
+    private List<BombUpgrade> bombUpgrades;
 
-    private final List<UnlimitedBombs> unlimitedBombs;
+    private List<UnlimitedBombs> unlimitedBombs;
 
     public Arena(int width, int height) {
         this.height = height;
@@ -77,16 +77,14 @@ public class Arena {
         return lifes;
     }
 
-
+    public void setLifes(List<Life> lifes){this.lifes = lifes;}
 
     public void eraseLife(Position position) {
         for (int i = 0; i < lifes.size(); i++) {
             if (lifes.get(i).getPosition().equals(position) && steven.getLifes() < 3) {
                 lifes.remove(i);
             }
-
         }
-
     }
 
     public List<BreakableWall> getBreakableWalls() {
@@ -255,5 +253,17 @@ public class Arena {
             this.unlimitedUp=false;
             setMaxBombs(1);
         }
+    }
+
+    public void setBombs(List<Bomb> bombs) {
+        this.bombs = bombs;
+    }
+
+    public void setBombUpgrades(List<BombUpgrade> bombUpgrades) {
+        this.bombUpgrades = bombUpgrades;
+    }
+
+    public void setUnlimitedBombs(List<UnlimitedBombs> unlimitedBombs) {
+        this.unlimitedBombs = unlimitedBombs;
     }
 }

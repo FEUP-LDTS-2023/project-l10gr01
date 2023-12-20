@@ -64,6 +64,9 @@ Our game only have one instance, so we could use a design pattern for this.
 #### THE PATTERN:
 In our Game class, we used the **Singleton Pattern**. The Singleton Pattern has been employed to ensure that there is only a single instance of the class within the entire application.
 
+#### THE IMLPEMENTATION:
+COLOCAR IMAGEM(S)
+
 #### CONSEQUENCES:
 - The Game instance is globally accessible throughout the application
 - We avoid unnecessary resource consumption that might occur with multiple instances.
@@ -75,6 +78,9 @@ Our game have two different types of monsters (Follower and Normal) and two type
 
 #### THE PATTERN:
 In order to solve this problem, the pattern implemented was the **Template Pattern**. We created an abstract class to Monster and two subclasses with the concrete implementations. We did the same to bombs.
+
+#### THE IMLPEMENTATION:
+COLOCAR IMAGEM(S)
 
 #### CONSEQUENCES:
 - Code reuse
