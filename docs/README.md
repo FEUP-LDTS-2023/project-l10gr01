@@ -123,7 +123,7 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 
 > A UML [diagram](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/diagram.png) expliciting the implementation of the classes:
 
- ![UniverseBomb](docs/images/UniverseBomb.drawio.png)
+ ![UniverseBomb](images/UniverseBomb.drawio.png)
 
 ### TESTING
 **COVERAGE REPORT**
