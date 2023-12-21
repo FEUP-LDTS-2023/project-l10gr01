@@ -3,10 +3,11 @@ plugins {
     id("info.solidsoft.pitest") version "1.15.0"
 }
 
-group = "org.example"
+group = "com.ldts.steven.*"
 version = "1.0-SNAPSHOT"
 pitest {
-    junit5PluginVersion = "0.12"
+    junit5PluginVersion = "1.1.2x"
+    verbose = true
 }
 repositories {
     mavenCentral()
