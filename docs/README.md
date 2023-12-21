@@ -136,7 +136,7 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 - Manoela Blanke: 33%
 
 <p align="center" justify="center">
-  <img src="docs/testReport.png"/>
+  <img src="testReport.png"/>
 </p>
 <p align="center">
   <b><i>Test Coverage Report </i></b>
