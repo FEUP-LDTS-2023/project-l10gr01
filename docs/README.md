@@ -135,5 +135,13 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 - Marcel Medeiros: 33%
 - Manoela Blanke: 33%
 
- ![img](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/testReport.png)
+<p align="center" justify="center">
+  <img src="docs/testReport.png"/>
+</p>
+<p align="center">
+  <b><i>Test Coverage Report </i></b>
+</p>  
+
+<br>
+<br />
 
