@@ -128,7 +128,7 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 ### TESTING
 **TEST COVERAGE REPORT**
 <p align="center" justify="center">
-  <img src="testReport.png"/>
+  <img src="testReport2.png"/>
 </p>
 <p align="center">
 </p>  
