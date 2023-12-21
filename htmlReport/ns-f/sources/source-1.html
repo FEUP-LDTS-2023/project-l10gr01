@@ -1,0 +1,206 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > SelectLevel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ldts.steven.model.selectLevel</a>
+</div>
+
+<h1>Coverage Summary for Class: SelectLevel (com.ldts.steven.model.selectLevel)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SelectLevel</td>
+<td class="coverageStat">
+  <span class="percent">
+    10%
+  </span>
+  <span class="absValue">
+    (1/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16,7%
+  </span>
+  <span class="absValue">
+    (3/18)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$2dJxNCL8</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$a8ihk6UN</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$d3zAxtQe</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$fiCn0h8X</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$gB8R4GaF</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$GBTGxcnr</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$iJtAhlUr</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$LwRHYKoo</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$rbSFaYnP</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$sO1lD2lI</td>
+  </tr>
+  <tr>
+    <td class="name">SelectLevel$MockitoMock$1209673878$auxiliary$tvfCS8o3</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    10%
+  </span>
+  <span class="absValue">
+    (1/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16,7%
+  </span>
+  <span class="absValue">
+    (3/18)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ldts.steven.model.selectLevel;
+&nbsp;import java.util.Arrays;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class SelectLevel {
+&nbsp;
+&nbsp;    private final List&lt;String&gt; entries;
+<b class="fc">&nbsp;    private int currentEntry = 0;</b>
+&nbsp;
+<b class="fc">&nbsp;    public SelectLevel() {</b>
+&nbsp;
+<b class="fc">&nbsp;        this.entries = Arrays.asList(</b>
+&nbsp;                &quot;LEVEL 1&quot;,
+&nbsp;                &quot;&quot;,
+&nbsp;                &quot;LEVEL 2&quot; ,
+&nbsp;                &quot;&quot;,
+&nbsp;                &quot;LEVEL 3&quot;,
+&nbsp;                &quot;&quot;,
+&nbsp;                &quot;Exit&quot;);
+&nbsp;    }
+&nbsp;
+&nbsp;    public void nextEntry() {
+<b class="nc">&nbsp;        currentEntry++;</b>
+<b class="nc">&nbsp;        currentEntry++;</b>
+<b class="nc">&nbsp;        if (currentEntry &gt; this.entries.size() - 1)</b>
+<b class="nc">&nbsp;            currentEntry = 0;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void previousEntry() {
+<b class="nc">&nbsp;        currentEntry--;</b>
+<b class="nc">&nbsp;        currentEntry--;</b>
+<b class="nc">&nbsp;        if (currentEntry &lt; 0)</b>
+<b class="nc">&nbsp;            currentEntry = this.entries.size() - 1;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEntry(int i) {
+<b class="nc">&nbsp;        return entries.get(i);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isSelected(int i) {
+<b class="nc">&nbsp;        return currentEntry == i;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isSelectedExit() {
+<b class="nc">&nbsp;        return isSelected(6);</b>
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    public boolean isSelectedLevelOne(){ return isSelected(0);}</b>
+&nbsp;    public boolean isSelectedLevelTwo() {
+<b class="nc">&nbsp;        return isSelected(2);</b>
+&nbsp;    }
+&nbsp;    public boolean isSelectedLevelThree() {
+<b class="nc">&nbsp;        return isSelected(4);</b>
+&nbsp;    }
+&nbsp;    public int getNumberEntries() {
+<b class="nc">&nbsp;        return this.entries.size();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-21 19:05</div>
+</div>
+</body>
+</html>

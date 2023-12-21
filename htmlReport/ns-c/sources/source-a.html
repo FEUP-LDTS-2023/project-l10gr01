@@ -1,0 +1,189 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Steven</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ldts.steven.model.game.elements</a>
+</div>
+
+<h1>Coverage Summary for Class: Steven (com.ldts.steven.model.game.elements)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Steven</td>
+<td class="coverageStat">
+  <span class="percent">
+    11,1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    30,8%
+  </span>
+  <span class="absValue">
+    (4/13)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$3MmI1EZK</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$bxr5l7fc</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$FbXZy2rq</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$gVUmXoy6</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$Q1RxLaAd</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$Q2e5bHcS</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$QucYiHpa</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$RAdRYjfs</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$TztoyFDE</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$UHCgAYET</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$vXoeabwZ</td>
+  </tr>
+  <tr>
+    <td class="name">Steven$MockitoMock$48079022$auxiliary$Xa3xgL4K</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    11,1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    30,8%
+  </span>
+  <span class="absValue">
+    (4/13)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ldts.steven.model.game.elements;
+&nbsp;
+&nbsp;public class Steven extends Element{
+&nbsp;    private int lifes;
+&nbsp;    public boolean bombUp;
+&nbsp;    public long getBombUpTime;
+&nbsp;    public String color;
+&nbsp;    public Steven(int x, int y) {
+<b class="fc">&nbsp;        super(x, y);</b>
+<b class="fc">&nbsp;        this.lifes= 3;</b>
+<b class="fc">&nbsp;        this.bombUp=false;</b>
+<b class="fc">&nbsp;        this.color=&quot;#FFEB48&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setColor(String color){
+<b class="nc">&nbsp;        this.color=color;</b>
+&nbsp;    }
+&nbsp;    public String getColor(){
+<b class="nc">&nbsp;        return this.color;</b>
+&nbsp;    }
+&nbsp;    public void decreaseLifes() {
+<b class="nc">&nbsp;        this.lifes--;</b>
+&nbsp;    }
+<b class="nc">&nbsp;    public boolean getBombUp() {return bombUp;}</b>
+&nbsp;
+&nbsp;    public int getLifes() {
+<b class="nc">&nbsp;        return lifes;</b>
+&nbsp;    }
+&nbsp;    public void setBombUp(boolean upgrade) {
+<b class="nc">&nbsp;        this.bombUp = upgrade;</b>
+<b class="nc">&nbsp;        this.getBombUpTime = System.currentTimeMillis();</b>
+&nbsp;    }
+&nbsp;    public void stopBombUp(long actualTime) {
+<b class="nc">&nbsp;        if (actualTime - getBombUpTime &gt; 15000) this.bombUp=false;</b>
+&nbsp;    }
+&nbsp;    public void increaseLifes() {
+<b class="nc">&nbsp;        if(lifes &lt; 3) this.lifes++;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-21 19:05</div>
+</div>
+</body>
+</html>

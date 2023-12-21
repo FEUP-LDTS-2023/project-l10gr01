@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Menu</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ldts.steven.model.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: Menu (com.ldts.steven.model.menu)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Menu</td>
+<td class="coverageStat">
+  <span class="percent">
+    11,1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    17,6%
+  </span>
+  <span class="absValue">
+    (3/17)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$13WMk7eE</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$Aev4DGGM</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$hfrfskgv</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$IM5rIDMR</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$KTg0Yh0X</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$p1D6bUeV</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$PH4wdTno</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$vtnlnclN</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$Y8Vt6dDB</td>
+  </tr>
+  <tr>
+    <td class="name">Menu$MockitoMock$765257393$auxiliary$Zx76XOiw</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    11,1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    17,6%
+  </span>
+  <span class="absValue">
+    (3/17)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ldts.steven.model.menu;
+&nbsp;
+&nbsp;import java.util.Arrays;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class Menu {
+&nbsp;    private final List&lt;String&gt; entries;
+<b class="fc">&nbsp;    private int currentEntry = 0;</b>
+&nbsp;
+<b class="fc">&nbsp;    public Menu() {</b>
+&nbsp;
+<b class="fc">&nbsp;        this.entries = Arrays.asList(</b>
+&nbsp;                &quot;Start&quot;,
+&nbsp;                &quot;&quot;,
+&nbsp;                &quot;Instructions&quot; ,
+&nbsp;                &quot;&quot;,
+&nbsp;                &quot;Exit&quot;);
+&nbsp;    }
+&nbsp;
+&nbsp;    public void nextEntry() {
+<b class="nc">&nbsp;        currentEntry++;</b>
+<b class="nc">&nbsp;        currentEntry++;</b>
+<b class="nc">&nbsp;        if (currentEntry &gt; this.entries.size() - 1)</b>
+<b class="nc">&nbsp;            currentEntry = 0;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void previousEntry() {
+<b class="nc">&nbsp;        currentEntry--;</b>
+<b class="nc">&nbsp;        currentEntry--;</b>
+<b class="nc">&nbsp;        if (currentEntry &lt; 0)</b>
+<b class="nc">&nbsp;            currentEntry = this.entries.size() - 1;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEntry(int i) {
+<b class="nc">&nbsp;        return entries.get(i);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isSelected(int i) {
+<b class="nc">&nbsp;        return currentEntry == i;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isSelectedExit() {
+<b class="nc">&nbsp;        return isSelected(4);</b>
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    public boolean isSelectedInstruction(){ return isSelected(2);}</b>
+&nbsp;    public boolean isSelectedStart() {
+<b class="nc">&nbsp;        return isSelected(0);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getNumberEntries() {
+<b class="nc">&nbsp;        return this.entries.size();</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-21 19:05</div>
+</div>
+</body>
+</html>

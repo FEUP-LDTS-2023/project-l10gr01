@@ -1,0 +1,199 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Bomb</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ldts.steven.model.game.elements</a>
+</div>
+
+<h1>Coverage Summary for Class: Bomb (com.ldts.steven.model.game.elements)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Bomb</td>
+<td class="coverageStat">
+  <span class="percent">
+    11,1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33,3%
+  </span>
+  <span class="absValue">
+    (4/12)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$1TB5gyRh</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$8pi8vA3f</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$BjNO0UKn</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$cvqEo3Ef</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$DepVFZBg</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$JGhnnb7g</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$LmjpylLo</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$MwUjppG7</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$oB6CS846</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$q6cu8hLL</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$u6TIJt5q</td>
+  </tr>
+  <tr>
+    <td class="name">Bomb$MockitoMock$992289912$auxiliary$vqp6Vxzd</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    11,1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33,3%
+  </span>
+  <span class="absValue">
+    (4/12)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ldts.steven.model.game.elements;
+&nbsp;
+&nbsp;import com.ldts.steven.model.Position;
+&nbsp;
+&nbsp;import java.util.Vector;
+&nbsp;
+&nbsp;public abstract class Bomb extends Element {
+&nbsp;
+&nbsp;    private final boolean exploded;
+&nbsp;    private final boolean disappear;
+&nbsp;    protected int explosionRadius;
+&nbsp;    public Vector&lt;Position&gt; canBombExplode;
+&nbsp;
+&nbsp;    public Bomb(int x, int y) {
+<b class="fc">&nbsp;        super(x,y);</b>
+<b class="fc">&nbsp;        this.canBombExplode = new Vector&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.exploded = false;</b>
+<b class="fc">&nbsp;        this.disappear = false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void explode() {
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void disappear() {
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public void update() {
+<b class="nc">&nbsp;    }</b>
+&nbsp;    public int getExplosionRadius(){
+<b class="nc">&nbsp;        return explosionRadius;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void addCanBombExplode(Position position) {
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    public Vector&lt;Position&gt; getCanBombExplode() {
+<b class="nc">&nbsp;        return canBombExplode;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean hasExploded() {
+<b class="nc">&nbsp;        return exploded;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean getDisappear() {
+<b class="nc">&nbsp;        return disappear;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-21 19:05</div>
+</div>
+</body>
+</html>

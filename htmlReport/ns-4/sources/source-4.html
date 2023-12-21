@@ -1,0 +1,183 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > HeroController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ldts.steven.controller.game</a>
+</div>
+
+<h1>Coverage Summary for Class: HeroController (com.ldts.steven.controller.game)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HeroController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91,7%
+  </span>
+  <span class="absValue">
+    (33/36)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ldts.steven.controller.game;
+&nbsp;
+&nbsp;import com.ldts.steven.Game;
+&nbsp;import com.ldts.steven.gui.GUI;
+&nbsp;import com.ldts.steven.model.Position;
+&nbsp;import com.ldts.steven.model.game.arena.Arena;
+&nbsp;
+&nbsp;public class HeroController extends GameController {
+&nbsp;
+&nbsp;    private final BombController bombController;
+&nbsp;    public HeroController(Arena arena, BombController bombController) {
+<b class="fc">&nbsp;        super(arena);</b>
+<b class="fc">&nbsp;        this.bombController=bombController;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void moveHeroLeft() {
+<b class="fc">&nbsp;        moveHero(getModel().getSteven().getPosition().getLeft());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void moveHeroRight() {
+<b class="fc">&nbsp;        moveHero(getModel().getSteven().getPosition().getRight());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void moveHeroUp() {
+<b class="fc">&nbsp;        moveHero(getModel().getSteven().getPosition().getUp());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void moveHeroDown() {
+<b class="fc">&nbsp;        moveHero(getModel().getSteven().getPosition().getDown());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void moveHero(Position position) {
+&nbsp;        /*Move hero is used to check Steven&#39;s location in the arena, several events can happen.
+&nbsp;        Steven can be hurt when in contact with a monster, however he can regain his lost lives with a life upgrade.
+&nbsp;        Also, if steven finds a bomb upgrade he can plant unlimited bombs or\and plant bombs with a bigger radius.
+&nbsp;         */
+<b class="fc">&nbsp;        if (getModel().isEmpty(position)) {</b>
+<b class="fc">&nbsp;            getModel().getSteven().setPosition(position);</b>
+<b class="fc">&nbsp;            if (getModel().isMonster(position) || getModel().isBomb(position)) {</b>
+<b class="fc">&nbsp;                bombController.setHurtSteven(true);</b>
+<b class="fc">&nbsp;                getModel().getSteven().decreaseLifes();</b>
+&nbsp;            }
+<b class="fc">&nbsp;            if (getModel().isLife(position)) {</b>
+<b class="fc">&nbsp;                getModel().eraseLife(position);</b>
+<b class="fc">&nbsp;                getModel().getSteven().increaseLifes();</b>
+&nbsp;            }
+<b class="fc">&nbsp;            if(getModel().isBombUpgrade(position)){</b>
+<b class="fc">&nbsp;                getModel().getSteven().setBombUp(true);</b>
+<b class="fc">&nbsp;                getModel().removeBombUpgrade(position);</b>
+&nbsp;            }
+<b class="fc">&nbsp;            if(getModel().isUnlimitedBomb(position)){</b>
+<b class="fc">&nbsp;                getModel().setUnlimitedUp(true);</b>
+<b class="fc">&nbsp;                getModel().removeUnlimitedBomb(position);</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public void step(Game game, GUI.ACTION action, long time) {
+<b class="fc">&nbsp;        if (action == GUI.ACTION.UP) moveHeroUp();</b>
+<b class="fc">&nbsp;        if (action == GUI.ACTION.RIGHT) moveHeroRight();</b>
+<b class="fc">&nbsp;        if (action == GUI.ACTION.DOWN) moveHeroDown();</b>
+<b class="fc">&nbsp;        if (action == GUI.ACTION.LEFT) moveHeroLeft();</b>
+<b class="fc">&nbsp;        if (action == GUI.ACTION.SPACE) {</b>
+<b class="fc">&nbsp;            Position heroPosition = getModel().getSteven().getPosition();</b>
+<b class="fc">&nbsp;            bombController.plantBomb(heroPosition);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(getModel().unlimitedUp &amp;&amp; getModel().getSteven().bombUp){</b>
+<b class="nc">&nbsp;            if(getModel().unlimitedUpTime&gt;getModel().getSteven().getBombUpTime){</b>
+<b class="nc">&nbsp;                getModel().getSteven().setColor(&quot;#1FC1DB&quot;);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            else getModel().getSteven().setColor(&quot;#FF6700&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        else if(getModel().unlimitedUp) getModel().getSteven().setColor(&quot;#1FC1DB&quot;);</b>
+<b class="fc">&nbsp;        else if(getModel().getSteven().bombUp) getModel().getSteven().setColor(&quot;#FF6700&quot;);</b>
+<b class="fc">&nbsp;        else getModel().getSteven().setColor(&quot;#FFEB48&quot;);</b>
+<b class="fc">&nbsp;        getModel().getSteven().stopBombUp(System.currentTimeMillis());</b>
+<b class="fc">&nbsp;        getModel().checkUnlimitedUp(System.currentTimeMillis());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-21 19:05</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > NormalBomb</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ldts.steven.model.game.elements</a>
+</div>
+
+<h1>Coverage Summary for Class: NormalBomb (com.ldts.steven.model.game.elements)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">NormalBomb</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88,9%
+  </span>
+  <span class="absValue">
+    (8/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    70,6%
+  </span>
+  <span class="absValue">
+    (12/17)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ldts.steven.model.game.elements;
+&nbsp;
+&nbsp;import com.ldts.steven.model.Position;
+&nbsp;
+&nbsp;import java.util.Vector;
+&nbsp;
+&nbsp;public class NormalBomb extends Bomb {
+&nbsp;    private boolean exploded;
+&nbsp;    protected int explosionRadius;
+&nbsp;    public long plantTime;
+&nbsp;    private boolean disappear;
+&nbsp;    public Vector&lt;Position&gt; canBombExplode;
+&nbsp;
+&nbsp;    public NormalBomb(int x, int y) {
+<b class="fc">&nbsp;        super(x, y);</b>
+<b class="fc">&nbsp;        this.exploded = false;</b>
+<b class="fc">&nbsp;        this.explosionRadius = 2;</b>
+<b class="fc">&nbsp;        this.plantTime = System.currentTimeMillis();</b>
+<b class="fc">&nbsp;        this.canBombExplode = new Vector&lt;&gt;();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void explode() {
+<b class="fc">&nbsp;        this.exploded = true;</b>
+&nbsp;    }
+&nbsp;    @Override
+<b class="fc">&nbsp;    public void disappear() {this.disappear = true;}</b>
+&nbsp;    @Override
+&nbsp;    public void update() {
+&nbsp;        // Verifique se o tempo decorrido é suficiente para a explosão
+<b class="nc">&nbsp;        long currentTime = System.currentTimeMillis();</b>
+<b class="nc">&nbsp;        if ((currentTime - plantTime &gt; 3000) &amp;&amp; currentTime-plantTime &lt; 5000) { // 3 segundos</b>
+<b class="nc">&nbsp;            explode();</b>
+<b class="nc">&nbsp;        } else if (currentTime - plantTime &gt; 5000) { // 6 segundos (3 segundos após a explosão)</b>
+<b class="nc">&nbsp;            disappear();</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public boolean hasExploded() {
+<b class="fc">&nbsp;        return exploded;</b>
+&nbsp;    }
+&nbsp;    @Override
+<b class="fc">&nbsp;    public boolean getDisappear(){return disappear;}</b>
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void addCanBombExplode(Position position){
+<b class="fc">&nbsp;        canBombExplode.add(position);</b>
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public Vector&lt;Position&gt; getCanBombExplode(){
+<b class="fc">&nbsp;        return canBombExplode;</b>
+&nbsp;    }
+&nbsp;    public int getExplosionRadius(){
+<b class="fc">&nbsp;        return explosionRadius;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-21 19:05</div>
+</div>
+</body>
+</html>

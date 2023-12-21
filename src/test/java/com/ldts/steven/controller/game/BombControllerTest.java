@@ -67,8 +67,8 @@ public class BombControllerTest {
         Bomb bombMock = mock(Bomb.class);
         when(bombMock.hasExploded()).thenReturn(true);
         when(arenaMock.getBombs()).thenReturn(List.of(bombMock));
-        BreakableWall wall1 = mock(BreakableWall.class);
-        BreakableWall wall2 = mock(BreakableWall.class);
+        BreakableWall wall1 = new BreakableWall(1,1);
+        BreakableWall wall2 = new BreakableWall(1,2);
         when(arenaMock.getBreakableWalls()).thenReturn(List.of(wall1, wall2));
         when(bombConMock.getModel().isBomb(wall1.getPosition())).thenReturn(true);
         when(bombConMock.getModel().isBomb(wall2.getPosition())).thenReturn(true);
