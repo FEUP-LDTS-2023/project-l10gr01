@@ -97,9 +97,7 @@ The **State Pattern** allows an object to alter its behavior. In our code, the S
 
 **Implementation**
 
-The following [Diagram](Docs/State.drawio.png) illustrates how the pattern was implemented.
-
-The classes can be found at [States](src/main/java/com/ldts/steven/states)
+![StatePattern](images/statepattern.drawio.png)
 
 
 **Consequences**
