@@ -49,7 +49,7 @@ In order to solve the problem above, the first pattern applied was the **Archite
 The second state applied was the **State Pattern**, a behavioral design pattern that enables an object to alter its behavior when its internal state changes
 
 #### THE IMLPEMENTATION:
-![StatePattern](images/statepattern.drawio.png)
+![MVCPattern](images/mvc.drawio.png)
 
 #### CONSEQUENCES:
 - The various states, indicative of different menus, are clearly defined in the code.
@@ -65,7 +65,7 @@ Our game only have one instance, so we could use a design pattern for this.
 In our Game class, we used the **Singleton Pattern**. The Singleton Pattern has been employed to ensure that there is only a single instance of the class within the entire application.
 
 #### THE IMLPEMENTATION:
-![SingletonPattern](docs/images/singleton.drawio.png)
+![SingletonPattern](images/singleton.drawio.png)
 
 #### CONSEQUENCES:
 - The Game instance is globally accessible throughout the application
