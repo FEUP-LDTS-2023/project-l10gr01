@@ -126,7 +126,7 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
  ![img](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/diagram.png)
 
 ### TESTING
-**TEST COVERAGE REPORT**
+**COVERAGE REPORT**
 <p align="center" justify="center">
   <img src="testReport2.png"/>
 </p>
@@ -136,6 +136,15 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 <br>
 <br />
 
+**MUTATION TESTING REPORT**
+<p align="center" justify="center">
+  <img src="mutationTest.png"/>
+</p>
+<p align="center">
+</p>  
+
+<br>
+<br />
 
 ### SELF-EVALUATION
 
