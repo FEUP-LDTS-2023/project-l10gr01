@@ -49,7 +49,7 @@ In order to solve the problem above, the first pattern applied was the **Archite
 The second state applied was the **State Pattern**, a behavioral design pattern that enables an object to alter its behavior when its internal state changes
 
 #### THE IMLPEMENTATION:
-COLOCAR IMAGEM(S)
+![StatePattern](images/statepattern.drawio.png)
 
 #### CONSEQUENCES:
 - The various states, indicative of different menus, are clearly defined in the code.
