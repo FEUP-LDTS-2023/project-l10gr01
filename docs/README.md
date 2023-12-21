@@ -125,6 +125,18 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 
  ![img](https://github.com/FEUP-LDTS-2023/project-l10gr01/blob/main/Docs/diagram.png)
 
+### TESTING
+**TEST COVERAGE REPORT**
+<p align="center" justify="center">
+  <img src="testReport2.png"/>
+</p>
+<p align="center">
+</p>  
+
+<br>
+<br />
+
+
 ### SELF-EVALUATION
 
 > The tasks of this delivery were evenly distribuited between all members. We had daily discussions about the implementation and design of our project, regarding everyone's input.
@@ -134,7 +146,5 @@ The classes can be found at [States](src/main/java/com/ldts/steven/states)
 - Leonardo Garcia: 33%
 - Marcel Medeiros: 33%
 - Manoela Blanke: 33%
-
-
 
 
