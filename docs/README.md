@@ -65,7 +65,7 @@ Our game only have one instance, so we could use a design pattern for this.
 In our Game class, we used the **Singleton Pattern**. The Singleton Pattern has been employed to ensure that there is only a single instance of the class within the entire application.
 
 #### THE IMLPEMENTATION:
-
+![SingletonPattern](docs/images/singleton.drawio.png)
 
 #### CONSEQUENCES:
 - The Game instance is globally accessible throughout the application
