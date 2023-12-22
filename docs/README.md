@@ -80,7 +80,7 @@ Our game have two different types of monsters (Follower and Normal) and two type
 In order to solve this problem, the pattern implemented was the **Template Pattern**. We created an abstract class to Monster and two subclasses with the concrete implementations. We did the same to bombs.
 
 #### THE IMLPEMENTATION:
-![TemplatePattern](images/templatepattern.drawio.png)
+![TemplatePattern](images/templatepattern.drawio1.png)
 
 #### CONSEQUENCES:
 - Code reuse
@@ -97,7 +97,7 @@ The **State Pattern** allows an object to alter its behavior. In our code, the S
 
 **Implementation**
 
-![StatePattern](images/statepattern.drawio.png)
+![StatePattern](images/statepattern.drawio1.png)
 
 
 **Consequences**
