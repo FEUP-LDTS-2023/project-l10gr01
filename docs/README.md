@@ -120,7 +120,7 @@ The **State Pattern** allows an object to alter its behavior. In our code, the S
 ### UML DIAGRAM
 
 
- ![UniverseBomb](images/UniverseBomb.drawio.png)
+ ![UniverseBomb](images/uml.drawio.png)
 
 ### TESTING
 **COVERAGE REPORT**
